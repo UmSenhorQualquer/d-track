@@ -12,15 +12,15 @@ D-Track
 
 D-Track is a software that is part of a system used to track objects on a water pool.
 
-.. image:: /_static/poll-reconstruction.png
+.. image:: /_static/pool-reconstruction.png
 
 
 Downloads
 ---------------------------------
 
-====================	====================================================
-Windows binaries		`here <http://opencv.org/downloads.html>`_ 
-====================	====================================================
+====================	====================================================================
+Windows binaries		`here <https://bitbucket.org/fchampalimaud/d-track/downloads>`_ 
+====================	====================================================================
 
 
 Requirements
