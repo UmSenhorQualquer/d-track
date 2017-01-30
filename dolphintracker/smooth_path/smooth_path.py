@@ -22,7 +22,7 @@ class SmoothPath(BaseWidget):
 		self._videofile0		= ControlFile('Camera 0 video')
 		self._videofile1		= ControlFile('Camera 1 video')
 		self._outputfile 		= ControlText('Output zip file')
-		self._refraction_index 	= ControlText('Refration index', '1.4')
+		self._refraction_index 	= ControlText('Refraction index', '1.4')
 		self._exc_btn 		= ControlButton('Run')		
 
 		self.formset = [ 	'_scenefile'	,
