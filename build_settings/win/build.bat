@@ -48,7 +48,8 @@ pyinstaller --additional-hooks-dir "%BUILDSETTINGSDIR%\hooks" --name "d-track-si
 pyinstaller --additional-hooks-dir "%BUILDSETTINGSDIR%\hooks" --name "d-track-smoothpath" --icon "%BUILDSETTINGSDIR%\%ICONNAME%" --onedir --debug "%MAINSCRIPT_1%"
 copy "%WORKSPACE%\dist\d-track-smoothpath\d-track-smoothpath.exe" "%WORKSPACE%\dist\d-track-singlecam\"
 copy "%WORKSPACE%\dist\d-track-smoothpath\d-track-smoothpath.exe.manifest" "%WORKSPACE%\dist\d-track-singlecam\"
-rename "%WORKSPACE%\dist\d-track-singlecam" "%WORKSPACE%\dist\%PROJECTNAME%_v%DEV_VERSION%_DEV"
+echo rename "%WORKSPACE%\dist\d-track-singlecam\" "%WORKSPACE%\dist\%PROJECTNAME%_v%DEV_VERSION%_DEV"
+rename "%WORKSPACE%\dist\d-track-singlecam\" "%WORKSPACE%\dist\%PROJECTNAME%_v%DEV_VERSION%_DEV"
 
 cd "%WORKSPACE%\dist\" & python c:\Users\swp\Python\zip.py "%WORKSPACE%\dist\%PROJECTNAME%_v%DEV_VERSION%_DEV" "%WORKSPACE%\dist\%PROJECTNAME%_v%DEV_VERSION%_DEV.zip"	
 IF %SOURCEFORGE_UPLOAD% EQU true (
