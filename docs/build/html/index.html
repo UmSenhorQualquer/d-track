@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>D-Track &mdash; d-track 0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="d-track 0.0 documentation" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> d-track
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">D-Track</a><ul>
+<li><a class="reference internal" href="#downloads">Downloads</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#installation-and-execution">Installation and execution</a><ul>
+<li><a class="reference internal" href="#from-the-binaries">From the binaries</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#run-the-applications">Run the applications</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#from-the-source-code">From the source code</a><ul>
+<li><a class="reference internal" href="#id3">Installation</a></li>
+<li><a class="reference internal" href="#id6">Run the applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#user-manual">User manual</a><ul>
+<li><a class="reference internal" href="#d-tracker-singlecam">d-tracker-singlecam</a></li>
+<li><a class="reference internal" href="#d-tracker-smoothpath">d-tracker-smoothpath</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">d-track</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>D-Track</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound">
+</div>
+<div class="section" id="d-track">
+<h1>D-Track<a class="headerlink" href="#d-track" title="Permalink to this headline">¶</a></h1>
+<p>D-Track is a software that is part of a system used to track objects in a whater pool.</p>
+<p>The system is composed by 2 GoPro Hero 2 cameras that synchronize the records.</p>
+<img alt="_images/poll-reconstruction.png" src="_images/poll-reconstruction.png" />
+<div class="section" id="downloads">
+<h2>Downloads<a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Windows binaries</td>
+<td><a class="reference external" href="http://opencv.org/downloads.html">here</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>The software was developed and tested with the operating system Ubuntu 14.04.5 LTS (Trusty Tahr).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>LIBRARY</strong></td>
+<td><strong>VERSION</strong></td>
+</tr>
+<tr class="row-even"><td>Python</td>
+<td>2.7.6</td>
+</tr>
+<tr class="row-odd"><td>Numpy</td>
+<td>1.8.2</td>
+</tr>
+<tr class="row-even"><td>OpenCV</td>
+<td>3.1.0</td>
+</tr>
+<tr class="row-odd"><td>PyOpenGL</td>
+<td>3.1.1a1</td>
+</tr>
+<tr class="row-even"><td>PyOpenGL_accelerate</td>
+<td>3.1.1a1</td>
+</tr>
+<tr class="row-odd"><td>PyForms</td>
+<td>v1.0.beta</td>
+</tr>
+<tr class="row-even"><td>csv</td>
+<td>1.0</td>
+</tr>
+<tr class="row-odd"><td>py3dengine</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="installation-and-execution">
+<h2>Installation and execution<a class="headerlink" href="#installation-and-execution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="from-the-binaries">
+<h3>From the binaries<a class="headerlink" href="#from-the-binaries" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="installation">
+<h4>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Download the windows binaries.</li>
+<li>Uncompress them for indevidual folders.</li>
+</ul>
+</div>
+<div class="section" id="run-the-applications">
+<h4>Run the applications<a class="headerlink" href="#run-the-applications" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Execute the executable file (<a href="#id1"><span class="problematic" id="id2">*</span></a>.exe) from each forlder.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="from-the-source-code">
+<h3>From the source code<a class="headerlink" href="#from-the-source-code" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4>Installation<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Ubuntu already comes with python 2.7 installed, therefore there is not need to install python.</li>
+<li>Download and install the source code of Numpy 1.8.2 <a class="reference external" href="https://sourceforge.net/projects/numpy/files/NumPy/1.8.2/">here</a> .</li>
+<li>Download the OpenCV library from the <a class="reference external" href="http://opencv.org/downloads.html">opencv.org</a> website, and follow the instructions to compile and install it with cmake.</li>
+<li>Execute the command: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip2.7</span> <span class="pre">install</span> <span class="pre">pyopengl</span> <span class="pre">pyopengl_accelerate</span></code>.</li>
+<li>Follow the instructions located <a class="reference external" href="pyforms.readthedocs.io/en/v1.0.beta/">here</a> to install PyForms.</li>
+<li>Install the csv library using the command: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">csv==1.0</span></code>.</li>
+<li>Install the py3dengine library using the command: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+https://UmSenhorQualquer&#64;bitbucket.org/UmSenhorQualquer/py3dengine.git</span></code>.</li>
+<li>Download an uncompress the d-tracker source code and install it using pip: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h4>Run the applications<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>On the terminal execute the command <code class="docutils literal"><span class="pre">d-tracker-singlecam</span></code> or the <code class="docutils literal"><span class="pre">d-tracker-smoothpath</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="user-manual">
+<h2>User manual<a class="headerlink" href="#user-manual" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="d-tracker-singlecam">
+<h3>d-tracker-singlecam<a class="headerlink" href="#d-tracker-singlecam" title="Permalink to this headline">¶</a></h3>
+<p>This application is used to segment the images of each camera and find the dolphin in the pool.</p>
+<img alt="_images/singlecam.png" src="_images/singlecam.png" />
+</div>
+<div class="section" id="d-tracker-smoothpath">
+<h3>d-tracker-smoothpath<a class="headerlink" href="#d-tracker-smoothpath" title="Permalink to this headline">¶</a></h3>
+<p>This application is used merge the output of the <strong>d-tracker-singlecam</strong> application of the 2 cameras.</p>
+<img alt="_images/smoothpath.png" src="_images/smoothpath.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Ricardo Ribeiro.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
