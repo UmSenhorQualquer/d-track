@@ -54,8 +54,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'd-track'
-copyright = u'2017, Ricardo Ribeiro'
-author = u'Ricardo Ribeiro'
+copyright = u'2017, Ricardo Jorge Vieira Ribeiro'
+author = u'Ricardo Jorge Vieira Ribeiro'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
