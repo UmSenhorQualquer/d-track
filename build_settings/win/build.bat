@@ -44,7 +44,12 @@ DEL git_version.txt
 @RD /S /Q %DISTOUTDIR%
 
 echo pyinstaller --additional-hooks-dir "%BUILDSETTINGSDIR%\hooks" --distpath "%WORKSPACE%\dist\%PROJECTNAME%_v%DEV_VERSION%_DEV" -name "d-tracker-singlecam" --icon "%BUILDSETTINGSDIR%\%ICONNAME%" --onedir --debug "%MAINSCRIPT%"
-pyinstaller --additional-hooks-dir "%BUILDSETTINGSDIR%\hooks" --name "d-tracker-singlecam" --name "d-tracker-smoothpath" --icon "%BUILDSETTINGSDIR%\%ICONNAME%" --onedir --debug "%MAINSCRIPT%" "%MAINSCRIPT_1%"
+pyinstaller --additional-hooks-dir "%BUILDSETTINGSDIR%\hooks" --name "d-track-singlecam" --icon "%BUILDSETTINGSDIR%\%ICONNAME%" --onedir --debug "%MAINSCRIPT%"
+pyinstaller --additional-hooks-dir "%BUILDSETTINGSDIR%\hooks" --name "d-track-smoothpath" --icon "%BUILDSETTINGSDIR%\%ICONNAME%" --onedir --debug "%MAINSCRIPT_1%"
+copy "%WORKSPACE%\dist\d-track-smoothpath\d-track-smoothpath.exe" "%WORKSPACE%\dist\d-track-singlecam\"
+copy "%WORKSPACE%\dist\d-track-smoothpath\d-track-smoothpath.exe.manifest" "%WORKSPACE%\dist\d-track-singlecam\"
+rename "%WORKSPACE%\dist\d-track-singlecam" "%WORKSPACE%\dist\%PROJECTNAME%_v%DEV_VERSION%_DEV"
+
 cd "%WORKSPACE%\dist\" & python c:\Users\swp\Python\zip.py "%WORKSPACE%\dist\%PROJECTNAME%_v%DEV_VERSION%_DEV" "%WORKSPACE%\dist\%PROJECTNAME%_v%DEV_VERSION%_DEV.zip"	
 IF %SOURCEFORGE_UPLOAD% EQU true (
 	c:\curl\curl.exe --progress-bar --netrc-file c:\curl_auth\bitbucket_auth.txt -X POST https://api.bitbucket.org/2.0/repositories/fchampalimaud/d-tracl/downloads -F files=@"%WORKSPACE%\dist\%PROJECTNAME%_v%DEV_VERSION%_DEV.zip"	 > curl_output.log
