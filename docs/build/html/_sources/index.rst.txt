@@ -19,9 +19,9 @@ Downloads
 ---------------------------------
 
 ====================	====================================================================
-Windows binaries		`here <https://bitbucket.org/fchampalimaud/d-track/downloads>`_ 
+Windows binaries		`bitbucket <https://bitbucket.org/fchampalimaud/d-track/downloads>`_ 
+Source code				`github <https://github.com/UmSenhorQualquer/d-track>`_ 
 ====================	====================================================================
-
 
 
 
@@ -47,5 +47,4 @@ Windows binaries		`here <https://bitbucket.org/fchampalimaud/d-track/downloads>`
    :includehidden:
    :caption: User manual
 
-   user-manual/singlecam
-   user-manual/smoothpath
+   user-manual/how-to-use
