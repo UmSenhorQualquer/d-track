@@ -25,7 +25,7 @@ python --version
 
 set "PROJECTNAME=d-tracker"
 set "BUILDSETTINGSDIR=%WORKSPACE%\build_settings\win"
-set "MAINSCRIPT=%WORKSPACE%\dolphintracker\singlecam_tracker\singlecam_tracker\singlecam_tracker.py"
+set "MAINSCRIPT=%WORKSPACE%\dolphintracker\singlecam_tracker\singlecam_tracker.py"
 set "BUILDOUTDIR=%WORKSPACE%\build"
 set "DISTOUTDIR=%WORKSPACE%\dist"
 set "ICONNAME=cf_icon_128x128.ico"
