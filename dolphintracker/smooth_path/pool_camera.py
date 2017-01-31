@@ -3,7 +3,7 @@ from dolphintracker.smooth_path import tools
 from dolphintracker.smooth_path.blob import Blob
 from dolphintracker.smooth_path import smooth_filters
 from dolphintracker.smooth_path.time_moment import TimeMoment
-
+from scipy.interpolate import interp1d
 
 START_FRAME = 0
 END_FRAME 	= 18000000
