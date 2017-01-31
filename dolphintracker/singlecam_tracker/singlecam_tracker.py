@@ -62,10 +62,10 @@ class SingleCamTracker(BaseWidget):
 		self._cValue3.changed_event 		= self._player.refresh
 		self._exc_btn.value 				= self.execute
 		
-		self._sceneFile.value = '/home/ricardo/Desktop/01Apollo201403210900/2013.11.23_10.59/2013.11.23_10.59_scene.obj'
-		self._video.value = '/home/ricardo/Desktop/01Apollo201403210900/2013.11.23_10.59/2013.11.23_10.59_Entrada.MP4'
-		self._camera.value = 'Camera1'
-		self._start.value = '19977'
+		#self._sceneFile.value = '/home/ricardo/Desktop/01Apollo201403210900/2013.11.23_10.59/2013.11.23_10.59_scene.obj'
+		#self._video.value = '/home/ricardo/Desktop/01Apollo201403210900/2013.11.23_10.59/2013.11.23_10.59_Entrada.MP4'
+		#self._camera.value = 'Camera1'
+		#self._start.value = '19977'
 		
 		
 

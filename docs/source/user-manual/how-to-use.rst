@@ -14,10 +14,11 @@ How to use
 Obtain the 3D path of the dolphin
 ----------------------------------
 
-1. Record 2 sychronized videos of a dolphin swimming in a pool.
+1. Record 2 sychronized videos of a dolphin swimming on a pool.
 2. Create an OBJ file representing the real world scenario with the `py3dscene-editor <https://bitbucket.org/UmSenhorQualquer/py3dsceneeditor>`_  application.
 3. Execute the application d-tracker-singlecam for each of the cameras to extract the dolphin centroid.
-4. Execute the application d-tracker-smoothpath to combine the cameras information and reconstruct the 3D path of the Dolphin. 
+4. Use the `pythonvideoannotator application (v1.5) <https://github.com/UmSenhorQualquer/pythonVideoAnnotator/>`_ to correct any error of the tracking.
+5. Execute the application d-tracker-smoothpath to combine the cameras information and reconstruct the 3D path of the Dolphin. 
 
 --------------------------------
 

@@ -152,9 +152,10 @@
 <div class="section" id="obtain-the-3d-path-of-the-dolphin">
 <h2>Obtain the 3D path of the dolphin<a class="headerlink" href="#obtain-the-3d-path-of-the-dolphin" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Record 2 sychronized videos of a dolphin swimming in a pool.</li>
+<li>Record 2 sychronized videos of a dolphin swimming on a pool.</li>
 <li>Create an OBJ file representing the real world scenario with the <a class="reference external" href="https://bitbucket.org/UmSenhorQualquer/py3dsceneeditor">py3dscene-editor</a>  application.</li>
 <li>Execute the application d-tracker-singlecam for each of the cameras to extract the dolphin centroid.</li>
+<li>Use the <a class="reference external" href="https://github.com/UmSenhorQualquer/pythonVideoAnnotator/">pythonvideoannotator application (v1.5)</a> to correct any error on the tracking.</li>
 <li>Execute the application d-tracker-smoothpath to combine the cameras information and reconstruct the 3D path of the Dolphin.</li>
 </ol>
 <hr class="docutils" />

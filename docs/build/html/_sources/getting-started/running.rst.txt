@@ -22,7 +22,7 @@ Excute D-Track on Windows
 Execute from the source code
 --------------------------------
 
-* After following the source code installation instructions 2 terminal command lines will be available to run. The ``d-tracker-singlecam`` and the ``d-tracker-smoothpath``.
+* After following the source code installation instructions, 2 new commands will be available on the terminal. The ``d-tracker-singlecam`` and the ``d-tracker-smoothpath``.
 * Just call these commands to execute the applications.
 
 

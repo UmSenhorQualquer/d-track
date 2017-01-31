@@ -8,7 +8,8 @@
 D-Track
 =====================================
 
-D-Track is a software that is part of a system used to track objects on a water pool.
+D-Track is a software to track an object based on the 3d schematics of the scene.
+This software is part of a system used to calculate the 3d path of objects on a water pool.
 
 .. image:: /_static/pool-reconstruction.png
 

@@ -9,14 +9,11 @@
 Installing
 **********
 
-.. warning::
-   This project was tested with Python 2.7!
-
 Install the Windows binary files
 --------------------------------
 
-* Download zip with the `windows binaries files <https://bitbucket.org/fchampalimaud/d-track/downloads>`_.
-* Uncompress the zip file to the folder where you want the application to be.
+* Download the zip file containing the `windows binaries files <https://bitbucket.org/fchampalimaud/d-track/downloads>`_.
+* Uncompress the zip file to a folder.
 * The application is ready to be used.
 
 --------------------------- 
@@ -26,12 +23,11 @@ Install the Windows binary files
 Install the source code
 --------------------------------
 
-|
+.. warning::
+   This project was developed and tested with Python 2.7 running on Ubuntu 14.04.5 LTS (Trusty Tahr).
 
 Requirements
 ~~~~~~~~~~~~~~~~~~~~~~
-
-The software was developed and tested with the operating system Ubuntu 14.04.5 LTS (Trusty Tahr).
 
 ====================	=============
 **LIBRARY**				  **VERSION**
