@@ -35,6 +35,12 @@ class SmoothPath(BaseWidget):
 
 		self._exc_btn.value = self.execute
 		self._scenefile.changed_event = self.__scenefile_changed
+
+		self._scenefile.value = '/mnt/storage_raid-0/SWP/golfinhos/2013.11.23_10.59_scene.obj'
+		self._trackfile0.value = '/mnt/storage_raid-0/SWP/golfinhos/output/2013.11.23_10.59_Entrada_out.csv'
+		self._trackfile1.value = '/mnt/storage_raid-0/SWP/golfinhos/output/2013.11.23_10.59_Cascata_out.csv'
+		self._videofile0.value = '/mnt/storage_raid-0/SWP/golfinhos/2013.11.23_10.59_Entrada.MP4'
+		self._videofile1.value = '/mnt/storage_raid-0/SWP/golfinhos/2013.11.23_10.59_Cascata.MP4'
 		
 	def __scenefile_changed(self):  
 		head, tail 	  	 = os.path.split(self._scenefile.value)
@@ -45,7 +51,7 @@ class SmoothPath(BaseWidget):
 	def execute(self):
 		if not os.path.exists('output'): os.makedirs('output')
 
-		DEBUG 				= True		
+		DEBUG 				= False		
 		#SCENE_FILE 			= '/media/ricardo/Elements/DOLPHINS/New Videos/2013.04.21_12.51/2013.04.21_12.51_scene.obj'
 		#VIDEO0 				= '/media/ricardo/Elements/DOLPHINS/New Videos/2013.04.21_12.51/2013 04 21 12 51_Entrada (2).MP4'
 		#VIDEO1 				= '/media/ricardo/Elements/DOLPHINS/New Videos/2013.04.21_12.51/2013 04 21 12 51_Cascata (2).MP4'
@@ -96,11 +102,14 @@ class SmoothPath(BaseWidget):
 
 		############################################################
 
-		print "clean paths"
 		trackings = [tracking0, tracking1]
 		for i, tracking in enumerate(trackings):
+			print "start::clean paths", i
 			tracking.CleanPositions();
+			print "start::interpolate paths", i
 			tracking.InterpolatePositions()
+		print "ended"
+		
 
 		camera_filterPos = tuple(camera_filter.position.tolist()[0])
 		camera1Pos = tuple(camera1.position.tolist()[0])
@@ -210,10 +219,11 @@ class SmoothPath(BaseWidget):
 				
 				spamwriter.writerow( [frame] + list(point) + list(pixel0) + [found0] + list(pixel1)  + [found1] )
 
-				self.progress = index+len(tracking0.moments)
+				self.progress = i+len(tracking0.moments)
 				
 			csvfile.close()	
 
+		self.progress = len(tracking0.moments)*2
 
 
 

@@ -233,6 +233,8 @@ class SingleCamTracker(BaseWidget):
 			self._player.image = img
 			self.progress = count
 			count +=1
+
+		self.progress = camera.totalFrames-FIRST_FRAME
 			
 		csvfile.close()
 		outVideo.release()

@@ -4,7 +4,10 @@ from dolphintracker.smooth_path.blob import Blob
 from dolphintracker.smooth_path import smooth_filters
 from dolphintracker.smooth_path.time_moment import TimeMoment
 from scipy.interpolate import interp1d
+from scipy.interpolate import InterpolatedUnivariateSpline
 from PyQt4 import QtGui
+
+from scipy.ndimage.filters import gaussian_filter
 
 START_FRAME = 0
 END_FRAME 	= 18000000
@@ -26,14 +29,14 @@ def interpolatePositions(values, begin, end):
 	frames 		= np.array(frames)
 	measures_x 	= np.array(measures_x)
 	measures_y 	= np.array(measures_y)
-	kind = 'slinear'
-	if len(frames)==3: kind = 'quadratic'
-	if len(frames)>=4: kind = 'cubic'
+	kind = 1
+	if len(frames)==3: kind = 2
+	if len(frames)>=4: kind = 3
 
-	
-	cubic_interp  = interp1d(frames, measures_x, kind=kind)
+
+	cubic_interp  = InterpolatedUnivariateSpline(frames, measures_x, k=kind)
 	measures_x 	  = cubic_interp(computed_time)
-	cubic_interp  = interp1d(frames, measures_y, kind=kind)
+	cubic_interp  = InterpolatedUnivariateSpline(frames, measures_y, k=kind)
 	measures_y    = cubic_interp(computed_time)
 
 	results = []
@@ -66,12 +69,12 @@ class PoolCamera(object):
 		self._firstFrame = None
 		self.moments = []
 
-		with open(filename, 'rb') as csvfile:
+		with open(filename, 'rU') as csvfile:
 			spamreader = csv.reader(csvfile, delimiter=';', quotechar='|')
 			lastframe = None
 			for row in spamreader:
 				QtGui.QApplication.processEvents()
-
+				if len(row)==0: continue
 				moment = TimeMoment(row)
 
 				if self._firstFrame==None: self._firstFrame = moment.frame
@@ -123,7 +126,7 @@ class PoolCamera(object):
 
 		noPosCounter = 0
 		for i, moment in enumerate( self.moments ):
-			QtGui.QApplication.processEvents()
+			
 			if last_pos==None and moment!=None: last_pos = moment.fitBlob().position
 			
 			velocity = None
@@ -202,8 +205,8 @@ class PoolCamera(object):
 		positions = [ m.fitBlob().position for m in self.moments ]
 		xs = [x for x,y in positions]
 		ys = [y for x,y in positions]
-		xs = smooth_filters.gaussian_filter(xs, sigma)
-		ys = smooth_filters.gaussian_filter(ys, sigma)
+		xs = gaussian_filter(xs, sigma)
+		ys = gaussian_filter(ys, sigma)
 		positions = [(x,y) for x,y in zip(xs, ys)]
 		for i, pos in enumerate(positions):
 			self.setPosition(i, pos)
