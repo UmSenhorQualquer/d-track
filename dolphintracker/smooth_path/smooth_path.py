@@ -76,6 +76,7 @@ class SmoothPath(BaseWidget):
 		floor 			= scene.getObject('Floor')
 		floor.refraction = REFRACTION_INDEX
 
+		print "loading files"
 		tracking0 = PoolCamera(TRACKING_FILE0)
 		tracking1 = PoolCamera(TRACKING_FILE1)
 		############################################################
@@ -95,7 +96,7 @@ class SmoothPath(BaseWidget):
 
 		############################################################
 
-
+		print "clean paths"
 		trackings = [tracking0, tracking1]
 		for i, tracking in enumerate(trackings):
 			tracking.CleanPositions();
@@ -108,6 +109,8 @@ class SmoothPath(BaseWidget):
 
 		last3dPos = None
 		count = 0
+
+		print "getting the 3d position"
 		for index, (m0, m1) in enumerate(zip(tracking0.moments, tracking1.moments)):
 			p0, p1 = m0.fitBlob().position, m1.fitBlob().position
 
