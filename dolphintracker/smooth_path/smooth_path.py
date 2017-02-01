@@ -36,11 +36,12 @@ class SmoothPath(BaseWidget):
 		self._exc_btn.value = self.execute
 		self._scenefile.changed_event = self.__scenefile_changed
 
+		"""
 		self._scenefile.value = '/mnt/storage_raid-0/SWP/golfinhos/2013.11.23_10.59_scene.obj'
 		self._trackfile0.value = '/mnt/storage_raid-0/SWP/golfinhos/output/2013.11.23_10.59_Entrada_out.csv'
 		self._trackfile1.value = '/mnt/storage_raid-0/SWP/golfinhos/output/2013.11.23_10.59_Cascata_out.csv'
 		self._videofile0.value = '/mnt/storage_raid-0/SWP/golfinhos/2013.11.23_10.59_Entrada.MP4'
-		self._videofile1.value = '/mnt/storage_raid-0/SWP/golfinhos/2013.11.23_10.59_Cascata.MP4'
+		self._videofile1.value = '/mnt/storage_raid-0/SWP/golfinhos/2013.11.23_10.59_Cascata.MP4'"""
 		
 	def __scenefile_changed(self):  
 		head, tail 	  	 = os.path.split(self._scenefile.value)
