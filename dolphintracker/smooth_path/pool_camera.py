@@ -4,6 +4,7 @@ from dolphintracker.smooth_path.blob import Blob
 from dolphintracker.smooth_path import smooth_filters
 from dolphintracker.smooth_path.time_moment import TimeMoment
 from scipy.interpolate import interp1d
+from PyQt4 import QtGui
 
 START_FRAME = 0
 END_FRAME 	= 18000000
@@ -69,6 +70,7 @@ class PoolCamera(object):
 			spamreader = csv.reader(csvfile, delimiter=';', quotechar='|')
 			lastframe = None
 			for row in spamreader:
+				QtGui.QApplication.processEvents()
 
 				moment = TimeMoment(row)
 
@@ -121,6 +123,7 @@ class PoolCamera(object):
 
 		noPosCounter = 0
 		for i, moment in enumerate( self.moments ):
+			QtGui.QApplication.processEvents()
 			if last_pos==None and moment!=None: last_pos = moment.fitBlob().position
 			
 			velocity = None
@@ -156,6 +159,7 @@ class PoolCamera(object):
 
 		positions = []
 		for i, moment in enumerate( self.moments ):
+			QtGui.QApplication.processEvents()
 			#in case there is a tracking value
 			if moment!=None:
 				positions.append([moment.frame, moment.fitBlob().position])
