@@ -25,6 +25,8 @@ class SmoothPath(BaseWidget):
 		self._refraction_index 	= ControlText('Refraction index', '1.4')
 		self._exc_btn 		= ControlButton('Run')		
 
+		self.has_progress = True
+
 		self.formset = [ 	'_scenefile'	,
 							('_videofile0', '_trackfile0'),
 							('_videofile1', '_trackfile1'),
@@ -102,6 +104,7 @@ class SmoothPath(BaseWidget):
 		camera_filterPos = tuple(camera_filter.position.tolist()[0])
 		camera1Pos = tuple(camera1.position.tolist()[0])
 
+		self.max_progress = len(tracking0.moments)*2
 
 		last3dPos = None
 		count = 0
@@ -170,6 +173,8 @@ class SmoothPath(BaseWidget):
 			else:
 				last3dPos = current3dPos
 
+			self.progress = index
+
 		for tracking in trackings: tracking.SmoothPositions(sigma=32);
 
 		if not DEBUG:
@@ -202,6 +207,7 @@ class SmoothPath(BaseWidget):
 				
 				spamwriter.writerow( [frame] + list(point) + list(pixel0) + [found0] + list(pixel1)  + [found1] )
 
+				self.progress = index+len(tracking0.moments)
 				
 			csvfile.close()	
 
