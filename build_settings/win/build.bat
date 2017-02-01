@@ -46,7 +46,7 @@ DEL git_version.txt
 echo pyinstaller --additional-hooks-dir "%BUILDSETTINGSDIR%\hooks" --noconfirm --distpath "%WORKSPACE%\dist\%PROJECTNAME%_v%DEV_VERSION%_DEV" -name "d-tracker-singlecam" --icon "%BUILDSETTINGSDIR%\%ICONNAME%" --onedir --debug "%MAINSCRIPT%"
 pyinstaller --additional-hooks-dir "%BUILDSETTINGSDIR%\hooks" --noconfirm --name "d-track-singlecam" --icon "%BUILDSETTINGSDIR%\%ICONNAME%" --onedir --debug "%MAINSCRIPT%"
 pyinstaller --additional-hooks-dir "%BUILDSETTINGSDIR%\hooks" --noconfirm --name "d-track-smoothpath" --icon "%BUILDSETTINGSDIR%\%ICONNAME%" --onedir --debug "%MAINSCRIPT_1%"
-xcopy /y "%WORKSPACE%\dist\d-track-smoothpath\*" "%WORKSPACE%\dist\d-track-singlecam\"
+C:\WINDOWS\system32\xcopy /y "%WORKSPACE%\dist\d-track-smoothpath\*" "%WORKSPACE%\dist\d-track-singlecam\"
 echo cd "%WORKSPACE%\dist\" & rename d-track-singlecam %PROJECTNAME%_v%DEV_VERSION%_DEV
 cd "%WORKSPACE%\dist\" & rename d-track-singlecam %PROJECTNAME%_v%DEV_VERSION%_DEV
 
