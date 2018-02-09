@@ -174,6 +174,15 @@ class SingleCamTracker(BaseWidget):
 
 
 	def execute(self):
+		
+		if not os.path.exists('output'): os.makedirs('output')
+
+		VIDEO_FILE				= self._video.value
+		VIDEO_OUT_FILE 			= self.output_videofile
+		SCENE_FILE				= self._sceneFile.value
+		FIRST_FRAME, LAST_FRAME = self._range.value
+		CAMERA 					= self._camera.value
+
 		self._exc_btn.enabled = False
 		self._blockSize1.enabled = False
 		self._blockSize2.enabled = False
@@ -186,12 +195,6 @@ class SingleCamTracker(BaseWidget):
 		self._range.enabled = False
 		self._camera.enabled = False
 
-		if not os.path.exists('output'): os.makedirs('output')
-
-		VIDEO_FILE				= self._video.value
-		VIDEO_OUT_FILE 			= self.output_videofile
-		SCENE_FILE				= self._sceneFile.value
-		FIRST_FRAME, LAST_FRAME = self._range.value
 		
 		world 				= WavefrontOBJReader(SCENE_FILE)
 		scene 				= Scene()
@@ -215,8 +218,9 @@ class SingleCamTracker(BaseWidget):
 		self._progress.max = LAST_FRAME-FIRST_FRAME
 		self._progress.min = 0
 		
+		print("CAMERA",CAMERA)
 		
-		camera = PoolCamera( VIDEO_FILE, self._camera.value, scene, ['Pool'], [filterCamera1, filterCamera2, filterCamera3] )
+		camera = PoolCamera( VIDEO_FILE, CAMERA, scene, ['Pool'], [filterCamera1, filterCamera2, filterCamera3] )
 
 		camera.frame_index = FIRST_FRAME
 		self.max_progress = camera.totalFrames-FIRST_FRAME

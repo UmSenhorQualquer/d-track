@@ -18,6 +18,8 @@ class PoolCamera(object):
 		self._backgrounds 	 = []
 		self._last_centroid = None
 
+		self._total_frames = int(self.videoCap.get(1))
+
 		self._colors = [(255,0,0),(0,255,0),(0,0,255)]
 
 	def create_mask(self, objectsNames):
@@ -43,7 +45,7 @@ class PoolCamera(object):
 			for i, colorFilter in enumerate(self.filters):
 				firstFrame = self.frame_index
 				bgDetector = BackGroundDetector(capture=self.videoCap, filterFunction=colorFilter.process)
-				bg = bgDetector.detect(4000, 2000, 180, )
+				bg = bgDetector.detect(self._total_frames*0.04, self._total_frames*0.03, 180, )
 				bg = cv2.dilate( bg, kernel=cv2.getStructuringElement( cv2.MORPH_RECT, (5,5) ), iterations=2 )
 				bg = 255-bg
 				bg[bg<255]=0
