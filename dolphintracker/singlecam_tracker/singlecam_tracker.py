@@ -34,13 +34,13 @@ class SingleCamTracker(BaseWidget):
 		self._player 		= ControlPlayer('Image')
 		self._range 	 	= ControlBoundingSlider('Frames to analyse', default=[0, 100], enabled=False)
 
-		self._blockSize1 	= ControlSlider('Thresh block size', default=193, minimum=1, maximum=1001)
+		self._blockSize1 	= ControlSlider('Thresh block size', default=193, minimum=2, maximum=1001)
 		self._cValue1 		= ControlSlider('Thresh C value',	 default=284, minimum=0, maximum=500)
 
-		self._blockSize2 	= ControlSlider('Thresh block size', default=463, minimum=1, maximum=1001)
+		self._blockSize2 	= ControlSlider('Thresh block size', default=463, minimum=2, maximum=1001)
 		self._cValue2 		= ControlSlider('Thresh C value', 	 default=289, minimum=0, maximum=500)
 		
-		self._blockSize3 	= ControlSlider('Thresh block size', default=910, minimum=1, maximum=1001)
+		self._blockSize3 	= ControlSlider('Thresh block size', default=910, minimum=2, maximum=1001)
 		self._cValue3 		= ControlSlider('Thresh C value', 	 default=288, minimum=0, maximum=500)
 	
 		self._exc_btn 		= ControlButton('Run')
