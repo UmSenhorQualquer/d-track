@@ -12,7 +12,7 @@ class TimeMoment(object):
 		if row!=None:
 			self.frame = int(float(row[0]))
 			nColumns = len(row)
-			for i in range( (nColumns-1)/3 ):
+			for i in range( int((nColumns-1)/3) ):
 				blob = Blob(row, i)
 				#in case the values in the csv are not empty add it to the list
 				if not blob.isEmpty: self.blobs.append( blob )

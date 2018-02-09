@@ -1,7 +1,7 @@
 import numpy as np
 import math
-from tools import *
-from OTPBase import OTPBase
+from dolphintracker.singlecam_tracker.camera_filter.tools import *
+from dolphintracker.singlecam_tracker.camera_filter.OTPBase import OTPBase
 
 
 class OTPBlobImage(OTPBase):
@@ -49,6 +49,6 @@ class OTPBlobImage(OTPBase):
         return blobs
 
     def process(self, image):
-    	blobs = super(OTPBlobImage, self).process(image)
+        blobs = super(OTPBlobImage, self).process(image)
         return OTPBlobImage.compute(self, blobs)
 

@@ -5,24 +5,71 @@
 
 .. _installing-label:
 
-**********
-Running
-**********
+******************
+Run D-Track
+******************
 
-Excute D-Track on Windows
+|
+
+.. note::
+    
+    Please make sure you have installed the environment before trying to execute the application.
+
+
+Windows mode
 --------------------------------
 
-* Locate the folder to where you unzip the application files.
-* Execute the application ``d-tracker-singlecam.exe`` and the application ``d-tracker-smoothpath.exe``.
+* Open the terminal na execute the next command in the terminal to activate the environment.
+
+  .. code-block:: bash
+
+     source activate py3dengine-environment
+
+* Execute the next command to open the Tracking application.
+
+  .. code-block:: bash
+
+     d-track-singlecam
+
+* Or execute the next command to open the Smooth Path application.
+
+  .. code-block:: bash
+
+     d-track-smoothpath
+
+
+.. image:: /_static/singlecam.png
 
 --------------------------- 
 
 |
 
-Execute from the source code
---------------------------------
+Batch/Terminal mode
+----------------------------------------------
 
-* After following the source code installation instructions, 2 new commands will be available on the terminal. The ``d-tracker-singlecam`` and the ``d-tracker-smoothpath``.
-* Just call these commands to execute the applications.
+Executing the software in batch mode is useful to analyse the videos on a computational cluster or to configure analysis to run one after each other using a shellscript.
+
+To activate the batch mode, thanks to the `PyForms <https://pyforms.readthedocs.io>`_ framework, you just need to add the next 2 parameters to the applications calls.
+
+.. code-block:: bash
+
+   d-track-singlecam terminal_mode --exec execute
+
+or
+
+.. code-block:: bash
+
+   d-track-smoothpath terminal_mode --exec execute
 
 
+More parameters
+==========================
+
+Call the command **help** to now which parameters you can use more.
+
+.. code-block:: bash
+
+   d-track-smoothpath terminal_mode --help
+
+
+.. image:: /_static/batch-help.png

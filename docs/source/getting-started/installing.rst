@@ -5,53 +5,36 @@
 
 .. _installing-label:
 
-**********
-Installing
-**********
+*************
+Install
+*************
 
-Install the Windows binary files
+Install on Ubuntu 17.10
 --------------------------------
 
-* Download the zip file containing the `windows binaries files <https://bitbucket.org/fchampalimaud/d-track/downloads>`_.
+* Download and install `Anaconda <https://www.anaconda.com/download/#linux>`_ or `Miniconda <https://conda.io/miniconda.html>`_
+* Download the zip file containing the `code <https://github.com/UmSenhorQualquer/d-track/archive/master.zip>`_.
 * Uncompress the zip file to a folder.
-* The application is ready to be used.
+* Open the terminal and change the current directory to the uncompressed folder.
 
---------------------------- 
+  .. code-block:: bash
 
-|
+     cd <d-track directory>
 
-Install the source code
---------------------------------
+* Execute the next command in the terminal to install the python environment.
 
-.. warning::
-   This project was developed and tested with Python 2.7 running on Ubuntu 14.04.5 LTS (Trusty Tahr).
+  .. code-block:: bash
 
-Requirements
-~~~~~~~~~~~~~~~~~~~~~~
+     conda env create -f environment-ubuntu17.yml
 
-====================	=============
-**LIBRARY**				  **VERSION**
-Python 					        2.7.6
-Numpy 					        1.8.2
-OpenCV 					        3.1.0
-PyOpenGL 				      3.1.1a1
-PyOpenGL_accelerate 	      3.1.1a1
-PyForms 				    v1.0.beta
-csv 					          1.0
-py3dengine				          0.0
-====================	=============
+* Activate the environment.
 
+  .. code-block:: bash
 
-Installation
-~~~~~~~~~~~~~~~~~~~~~~
+     source activate py3dengine-environment
 
-* Ubuntu already comes with python 2.7 installed, therefore there is not need to install python.
-* Download and install the source code of `Numpy 1.8.2 <https://sourceforge.net/projects/numpy/files/NumPy/1.8.2/>`_
-* Download the OpenCV library from the `opencv.org <http://opencv.org/downloads.html>`_ website, and follow the instructions to compile and install it with cmake.
-* Execute the command: ``sudo pip2.7 install pyopengl pyopengl_accelerate``
-* Follow this `instructions <http://pyforms.readthedocs.io/en/v1.0.beta/#installation>`_ to install PyForms.
-* Install the csv library using the command: ``sudo pip install csv==1.0``
-* Install the py3dengine library using the command: ``sudo pip install git+https://UmSenhorQualquer@bitbucket.org/UmSenhorQualquer/py3dengine.git``
-* Download an uncompress the d-tracker source code and install it using pip: ``sudo pip install git+https://github.com/UmSenhorQualquer/d-track.git``
+* Run the installation script.
 
+  .. code-block:: bash
 
+     python install.py

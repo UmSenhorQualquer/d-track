@@ -1,11 +1,13 @@
 import pyforms
 from pyforms			import BaseWidget
-from pyforms.Controls	import ControlText
-from pyforms.Controls	import ControlProgress
-from pyforms.Controls	import ControlSlider
-from pyforms.Controls	import ControlButton
-from pyforms.Controls	import ControlPlayer
-from pyforms.Controls	import ControlFile
+from pyforms.controls	import ControlText
+from pyforms.controls	import ControlProgress
+from pyforms.controls	import ControlSlider
+from pyforms.controls	import ControlButton
+from pyforms.controls	import ControlPlayer
+from pyforms.controls	import ControlFile
+from pyforms.controls	import ControlCombo
+from pyforms.controls	import ControlBoundingSlider
 from pyforms.utils 		import tools
 import os, cv2, shutil, numpy as np, csv
 
@@ -22,37 +24,44 @@ class SingleCamTracker(BaseWidget):
 	def __init__(self):
 		super(SingleCamTracker,self).__init__('Dolphin tracker')
 
+		self.set_margin(5)
+
 		self._sceneFile 	= ControlFile('Scene file')
 
 		self._video 		= ControlFile('Video')
 		
-		self._outputfile 	= ControlText('Output zip file')
-		self._camera 	 	= ControlText('Camera')
+		self._camera 	 	= ControlCombo('Camera', enabled=False)
 		self._player 		= ControlPlayer('Image')
-		self._start 	 	= ControlText('Start on frame', '0')
+		self._range 	 	= ControlBoundingSlider('Frames to analyse', default=[0, 100], enabled=False)
 
-		self._blockSize1 	= ControlSlider('Thresh block size', 193, 1, 1001)
-		self._cValue1 		= ControlSlider('Thresh C value',	 284, 0, 500)
+		self._blockSize1 	= ControlSlider('Thresh block size', default=193, minimum=1, maximum=1001)
+		self._cValue1 		= ControlSlider('Thresh C value',	 default=284, minimum=0, maximum=500)
 
-		self._blockSize2 	= ControlSlider('Thresh block size', 463, 1, 1001)
-		self._cValue2 		= ControlSlider('Thresh C value', 	 289, 0, 500)
+		self._blockSize2 	= ControlSlider('Thresh block size', default=463, minimum=1, maximum=1001)
+		self._cValue2 		= ControlSlider('Thresh C value', 	 default=289, minimum=0, maximum=500)
 		
-		self._blockSize3 	= ControlSlider('Thresh block size', 910, 1, 1001)
-		self._cValue3 		= ControlSlider('Thresh C value', 	 288, 0, 500)
+		self._blockSize3 	= ControlSlider('Thresh block size', default=910, minimum=1, maximum=1001)
+		self._cValue3 		= ControlSlider('Thresh C value', 	 default=288, minimum=0, maximum=500)
 	
-		self._exc_btn 		= ControlButton('Run')		
+		self._exc_btn 		= ControlButton('Run')
 
-		self.formset = [ 	'_sceneFile'	,
-							('_video', '_start'),
-							('_camera', '_outputfile'),
-							('_blockSize1', '_cValue1'),
-							('_blockSize2', '_cValue2'),
-							('_blockSize3', '_cValue3'),
-							'_player','_exc_btn']
+		self._progress 		= ControlProgress('Progress', visible=False)
+
+		self.formset 		= [ 	
+			'_video',
+			'_range',
+			('_sceneFile', '_camera'),
+			('_blockSize1', '_cValue1'),
+			('_blockSize2', '_cValue2'),
+			('_blockSize3', '_cValue3'),
+			'_player','_exc_btn',
+			'_progress'
+		]
 
 		self.has_progress = True
-		self._video.changed_event 			= self.__video_changed
-		self._player.process_frame_event 	= self.__processFrame
+		self._video.changed_event 			= self.__video_changed_evt
+		self._player.process_frame_event 	= self.__process_frame_evt
+		self._sceneFile.changed_event 		= self.__scene_changed_evt
 
 		self._blockSize1.changed_event 		= self._player.refresh
 		self._blockSize2.changed_event 		= self._player.refresh
@@ -62,14 +71,41 @@ class SingleCamTracker(BaseWidget):
 		self._cValue3.changed_event 		= self._player.refresh
 		self._exc_btn.value 				= self.execute
 		
-		#self._sceneFile.value = '/home/ricardo/Desktop/01Apollo201403210900/2013.11.23_10.59/2013.11.23_10.59_scene.obj'
-		#self._video.value = '/home/ricardo/Desktop/01Apollo201403210900/2013.11.23_10.59/2013.11.23_10.59_Entrada.MP4'
-		#self._camera.value = 'Camera1'
-		#self._start.value = '19977'
+		"""
+		self._sceneFile.value = '/home/ricardo/Downloads/golfinhos/2013.11.23_10.59_scene.obj'
+		self._video.value 	  = '/home/ricardo/Downloads/golfinhos/2013.11.23_10.59_Entrada.MP4'
+		self._range.value     = [9000, self._range.max]
+		"""
 		
-		
+	def __scene_changed_evt(self):
+		if self._sceneFile.value:
+			self._camera.enabled = True
+			world 				= WavefrontOBJReader(self._sceneFile.value)
+			scene 				= Scene()
+			scene.objects 		= world.objects
+			scene.cameras 		= world.cameras
 
-	def __processFrame(self, frame): 
+			self._camera.clear()
+			for cam in scene.cameras:
+				self._camera.add_item(cam.name)
+		else:
+			self._camera.enabled = False
+		
+	def __video_changed_evt(self):
+		self._player.value 	   = self._video.value
+		head, 		tail 	   = os.path.split(self._video.value)
+		filename, 	extention  = os.path.splitext(tail)
+
+		if self._video.value:
+			self._range.enabled = True
+			self._range.max 	= self._player.max
+			self._range.value 	= self._range.value[0], self._player.max
+		else:
+			self._range.enabled = False
+
+
+
+	def __process_frame_evt(self, frame): 
 		b, g, r = cv2.split(frame)
 		thresh = g
 		
@@ -116,12 +152,7 @@ class SingleCamTracker(BaseWidget):
 		#resImg = cv2.bitwise_and(res, resImg)
 		return [frame, resImg]
 
-	def __video_changed(self):  
-		self._player.value = self._video.value
-		head, 		tail 	  	 = os.path.split(self._video.value)
-		filename, 	extention 	 = os.path.splitext(tail)
-		self._outputfile.value   = "{0}_out.zip".format(filename)
-		
+
 	@property
 	def output_videofile(self):
 		head, 		tail 	  	 = os.path.split(self._video.value)
@@ -143,13 +174,25 @@ class SingleCamTracker(BaseWidget):
 
 
 	def execute(self):
+		self._exc_btn.enabled = False
+		self._blockSize1.enabled = False
+		self._blockSize2.enabled = False
+		self._blockSize3.enabled = False
+		self._cValue1.enabled = False
+		self._cValue2.enabled = False
+		self._cValue3.enabled = False
+		self._sceneFile.enabled  = False
+		self._video.enabled = False
+		self._range.enabled = False
+		self._camera.enabled = False
+
 		if not os.path.exists('output'): os.makedirs('output')
 
-		VIDEO_FILE		= self._video.value
-		VIDEO_OUT_FILE 	= self.output_videofile
-		FIRST_FRAME 	= eval(self._start.value)
-		SCENE_FILE		= self._sceneFile.value
-
+		VIDEO_FILE				= self._video.value
+		VIDEO_OUT_FILE 			= self.output_videofile
+		SCENE_FILE				= self._sceneFile.value
+		FIRST_FRAME, LAST_FRAME = self._range.value
+		
 		world 				= WavefrontOBJReader(SCENE_FILE)
 		scene 				= Scene()
 		scene.objects 		= world.objects
@@ -157,16 +200,20 @@ class SingleCamTracker(BaseWidget):
 		
 		filterCamera1 =  FilterAllPool()
 
-		filterCamera1._param_tb_block_size       = self._blockSize1.value if (self._blockSize1.value % 2)!=0 else (self._blockSize1.value+1)
-		filterCamera1._param_tb_c                = self._cValue1.value
+		filterCamera1._param_tb_block_size = self._blockSize1.value if (self._blockSize1.value % 2)!=0 else (self._blockSize1.value+1)
+		filterCamera1._param_tb_c          = self._cValue1.value
 		
 		filterCamera2 =  FilterAllPool()
-		filterCamera2._param_tb_block_size       = self._blockSize2.value if (self._blockSize2.value % 2)!=0 else (self._blockSize2.value+1)
-		filterCamera2._param_tb_c                = self._cValue2.value
+		filterCamera2._param_tb_block_size = self._blockSize2.value if (self._blockSize2.value % 2)!=0 else (self._blockSize2.value+1)
+		filterCamera2._param_tb_c          = self._cValue2.value
 
 		filterCamera3 =  FilterAllPool()
-		filterCamera3._param_tb_block_size       = self._blockSize3.value if (self._blockSize3.value % 2)!=0 else (self._blockSize3.value+1)
-		filterCamera3._param_tb_c                = self._cValue3.value
+		filterCamera3._param_tb_block_size = self._blockSize3.value if (self._blockSize3.value % 2)!=0 else (self._blockSize3.value+1)
+		filterCamera3._param_tb_c          = self._cValue3.value
+
+		self._progress.show()
+		self._progress.max = LAST_FRAME-FIRST_FRAME
+		self._progress.min = 0
 		
 		
 		camera = PoolCamera( VIDEO_FILE, self._camera.value, scene, ['Pool'], [filterCamera1, filterCamera2, filterCamera3] )
@@ -179,16 +226,22 @@ class SingleCamTracker(BaseWidget):
 		fourcc    	   = cv2.VideoWriter_fourcc('M','J','P','G')
 		outvideofile   = os.path.join('output',VIDEO_OUT_FILE)
 		outVideo 	   = cv2.VideoWriter( outvideofile,fourcc, camera.fps, (OUT_IMG_WIDTH,OUT_IMG_HEIGHT) )
-		csvfile = open( os.path.join( 'output', self.output_csvfile ), 'w')
-		spamwriter = csv.writer(csvfile, delimiter=';',quotechar='|',quoting=csv.QUOTE_MINIMAL)
+		csvfile 	   = open( os.path.join( 'output', self.output_csvfile ), 'w')
+		spamwriter     = csv.writer(csvfile, delimiter=';',quotechar='|',quoting=csv.QUOTE_MINIMAL)
 
 		count = 0
 		point = None
+
+		
+
 		while True:
 			frameIndex = camera.frame_index
 			res = camera.read()
+
+			
 			
 			if not res: break
+			if frameIndex>LAST_FRAME: break
 
 			blobs = camera.process()
 
@@ -231,26 +284,32 @@ class SingleCamTracker(BaseWidget):
 
 			outVideo.write(img)
 			self._player.image = img
-			self.progress = count
 			count +=1
 
-		self.progress = camera.totalFrames-FIRST_FRAME
-			
+			self._progress.value = count
+
+
 		csvfile.close()
 		outVideo.release()
 
-		tools.zipdir('output', os.path.join('output', self._outputfile.value) )
-		for filename in os.listdir("output"):
-			path2file = os.path.join('output', filename)
-			if os.path.isdir(path2file): shutil.rmtree( path2file )
-			elif os.path.splitext(filename)[1].lower()!='.zip': os.remove( path2file )
-
+		self._progress.hide()
+		self._exc_btn.enabled = True
+		self._blockSize1.enabled = True
+		self._blockSize2.enabled = True
+		self._blockSize3.enabled = True
+		self._cValue1.enabled = True
+		self._cValue2.enabled = True
+		self._cValue3.enabled = True
+		self._sceneFile.enabled  = True
+		self._video.enabled = True
+		self._range.enabled = True
+		self._camera.enabled = True
 
 ##################################################################################################################
 ##################################################################################################################
 ##################################################################################################################
 
-def main(): pyforms.start_app( SingleCamTracker )
+def main(): pyforms.start_app( SingleCamTracker, geometry=(100,100, 800, 700) )
 
 if __name__ == "__main__":	main()
 	

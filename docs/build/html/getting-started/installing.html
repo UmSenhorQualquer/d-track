@@ -8,9 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installing &mdash; d-track 0.0 documentation</title>
+  <title>Install &mdash; d-track 0.0 documentation</title>
   
 
+  
+  
   
   
 
@@ -34,7 +36,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="d-track 0.0 documentation" href="../index.html"/>
-        <link rel="next" title="Running" href="running.html"/>
+        <link rel="next" title="Run D-Track" href="running.html"/>
         <link rel="prev" title="D-Track" href="../index.html"/> 
 
   
@@ -44,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -84,19 +87,17 @@
           
             
             
-                <p class="caption"><span class="caption-text">Getting started</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-the-windows-binary-files">Install the Windows binary files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-the-source-code">Install the source code</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-on-ubuntu-17-10">Install on Ubuntu 17.10</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="running.html">Running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running.html">Run D-Track</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User manual</span></p>
 <ul>
@@ -113,8 +114,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">d-track</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">d-track</a>
+        
       </nav>
 
 
@@ -123,113 +126,94 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
-    <li>Installing</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Install</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../_sources/getting-started/installing.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="installing">
-<span id="installing-label"></span><h1>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="install-the-windows-binary-files">
-<h2>Install the Windows binary files<a class="headerlink" href="#install-the-windows-binary-files" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Download the zip file containing the <a class="reference external" href="https://bitbucket.org/fchampalimaud/d-track/downloads">windows binaries files</a>.</li>
-<li>Uncompress the zip file to a folder.</li>
-<li>The application is ready to be used.</li>
+  <div class="section" id="install">
+<span id="installing-label"></span><h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-on-ubuntu-17-10">
+<h2>Install on Ubuntu 17.10<a class="headerlink" href="#install-on-ubuntu-17-10" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Download and install <a class="reference external" href="https://www.anaconda.com/download/#linux">Anaconda</a> or <a class="reference external" href="https://conda.io/miniconda.html">Miniconda</a></p>
+</li>
+<li><p class="first">Download the zip file containing the <a class="reference external" href="https://github.com/UmSenhorQualquer/d-track/archive/master.zip">code</a>.</p>
+</li>
+<li><p class="first">Uncompress the zip file to a folder.</p>
+</li>
+<li><p class="first">Open the terminal and change the current directory to the uncompressed folder.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;d-track directory&gt;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Execute the next command in the terminal to install the python environment.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>conda env create -f environment-ubuntu17.yml
+</pre></div>
+</div>
+</li>
+<li><p class="first">Activate the environment.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">source</span> activate py3dengine-environment
+</pre></div>
+</div>
+</li>
+<li><p class="first">Run the installation script.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>python install.py
+</pre></div>
+</div>
+</li>
 </ul>
-<hr class="docutils" />
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-</div>
-<div class="section" id="install-the-source-code">
-<h2>Install the source code<a class="headerlink" href="#install-the-source-code" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This project was developed and tested with Python 2.7 running on Ubuntu 14.04.5 LTS (Trusty Tahr).</p>
-</div>
-<div class="section" id="requirements">
-<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="docutils">
-<colgroup>
-<col width="41%" />
-<col width="59%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>LIBRARY</strong></td>
-<td><strong>VERSION</strong></td>
-</tr>
-<tr class="row-even"><td>Python</td>
-<td>2.7.6</td>
-</tr>
-<tr class="row-odd"><td>Numpy</td>
-<td>1.8.2</td>
-</tr>
-<tr class="row-even"><td>OpenCV</td>
-<td>3.1.0</td>
-</tr>
-<tr class="row-odd"><td>PyOpenGL</td>
-<td>3.1.1a1</td>
-</tr>
-<tr class="row-even"><td>PyOpenGL_accelerate</td>
-<td>3.1.1a1</td>
-</tr>
-<tr class="row-odd"><td>PyForms</td>
-<td>v1.0.beta</td>
-</tr>
-<tr class="row-even"><td>csv</td>
-<td>1.0</td>
-</tr>
-<tr class="row-odd"><td>py3dengine</td>
-<td>0.0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Ubuntu already comes with python 2.7 installed, therefore there is not need to install python.</li>
-<li>Download and install the source code of <a class="reference external" href="https://sourceforge.net/projects/numpy/files/NumPy/1.8.2/">Numpy 1.8.2</a></li>
-<li>Download the OpenCV library from the <a class="reference external" href="http://opencv.org/downloads.html">opencv.org</a> website, and follow the instructions to compile and install it with cmake.</li>
-<li>Execute the command: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip2.7</span> <span class="pre">install</span> <span class="pre">pyopengl</span> <span class="pre">pyopengl_accelerate</span></code></li>
-<li>Follow this <a class="reference external" href="http://pyforms.readthedocs.io/en/v1.0.beta/#installation">instructions</a> to install PyForms.</li>
-<li>Install the csv library using the command: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">csv==1.0</span></code></li>
-<li>Install the py3dengine library using the command: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+https://UmSenhorQualquer&#64;bitbucket.org/UmSenhorQualquer/py3dengine.git</span></code></li>
-<li>Download an uncompress the d-tracker source code and install it using pip: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+https://github.com/UmSenhorQualquer/d-track.git</span></code></li>
-</ul>
-</div>
 </div>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
            </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="running.html" class="btn btn-neutral float-right" title="Running" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="running.html" class="btn btn-neutral float-right" title="Run D-Track" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="D-Track" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral" title="D-Track" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -263,13 +247,14 @@
             VERSION:'0.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

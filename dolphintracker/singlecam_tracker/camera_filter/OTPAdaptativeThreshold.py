@@ -2,7 +2,7 @@ import cv2, time, itertools
 from numpy import *
 from math import *
 
-from OTPBase import *
+from dolphintracker.singlecam_tracker.camera_filter.OTPBase import *
 
 class OTPAdaptativeThreshold(OTPBase):
 

@@ -8,9 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Running &mdash; d-track 0.0 documentation</title>
+  <title>Run D-Track &mdash; d-track 0.0 documentation</title>
   
 
+  
+  
   
   
 
@@ -35,7 +37,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="d-track 0.0 documentation" href="../index.html"/>
         <link rel="next" title="How to use" href="../user-manual/how-to-use.html"/>
-        <link rel="prev" title="Installing" href="installing.html"/> 
+        <link rel="prev" title="Install" href="installing.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -44,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -84,13 +87,19 @@
           
             
             
-                <p class="caption"><span class="caption-text">Getting started</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installing.html">Installing</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Running</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#excute-d-track-on-windows">Excute D-Track on Windows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#execute-from-the-source-code">Execute from the source code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Run D-Track</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#windows-mode">Windows mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#batch-terminal-mode">Batch/Terminal mode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#more-parameters">More parameters</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -109,8 +118,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">d-track</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">d-track</a>
+        
       </nav>
 
 
@@ -119,61 +130,115 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
-    <li>Running</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Run D-Track</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../_sources/getting-started/running.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="running">
-<span id="installing-label"></span><h1>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="excute-d-track-on-windows">
-<h2>Excute D-Track on Windows<a class="headerlink" href="#excute-d-track-on-windows" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Locate the folder to where you unzip the application files.</li>
-<li>Execute the application <code class="docutils literal"><span class="pre">d-tracker-singlecam.exe</span></code> and the application <code class="docutils literal"><span class="pre">d-tracker-smoothpath.exe</span></code>.</li>
+  <div class="section" id="run-d-track">
+<span id="installing-label"></span><h1>Run D-Track<a class="headerlink" href="#run-d-track" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please make sure you have installed the environment before trying to execute the application.</p>
+</div>
+<div class="section" id="windows-mode">
+<h2>Windows mode<a class="headerlink" href="#windows-mode" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Open the terminal na execute the next command in the terminal to activate the environment.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">source</span> activate py3dengine-environment
+</pre></div>
+</div>
+</li>
+<li><p class="first">Execute the next command to open the Tracking application.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>d-track-singlecam
+</pre></div>
+</div>
+</li>
+<li><p class="first">Or execute the next command to open the Smooth Path application.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>d-track-smoothpath
+</pre></div>
+</div>
+</li>
 </ul>
+<img alt="../_images/singlecam.png" src="../_images/singlecam.png" />
 <hr class="docutils" />
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 </div>
-<div class="section" id="execute-from-the-source-code">
-<h2>Execute from the source code<a class="headerlink" href="#execute-from-the-source-code" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>After following the source code installation instructions, 2 new commands will be available on the terminal. The <code class="docutils literal"><span class="pre">d-tracker-singlecam</span></code> and the <code class="docutils literal"><span class="pre">d-tracker-smoothpath</span></code>.</li>
-<li>Just call these commands to execute the applications.</li>
-</ul>
+<div class="section" id="batch-terminal-mode">
+<h2>Batch/Terminal mode<a class="headerlink" href="#batch-terminal-mode" title="Permalink to this headline">¶</a></h2>
+<p>Executing the software in batch mode is useful to analyse the videos on a computational cluster or to configure analysis to run one after each other using a shellscript.</p>
+<p>To activate the batch mode, thanks to the <a class="reference external" href="https://pyforms.readthedocs.io">PyForms</a> framework, you just need to add the next 2 parameters to the applications calls.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>d-track-singlecam terminal_mode --exec execute
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>d-track-smoothpath terminal_mode --exec execute
+</pre></div>
+</div>
+<div class="section" id="more-parameters">
+<h3>More parameters<a class="headerlink" href="#more-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Call the command <strong>help</strong> to now which parameters you can use more.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>d-track-smoothpath terminal_mode --help
+</pre></div>
+</div>
+<img alt="../_images/batch-help.png" src="../_images/batch-help.png" />
+</div>
 </div>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
            </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../user-manual/how-to-use.html" class="btn btn-neutral float-right" title="How to use" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../user-manual/how-to-use.html" class="btn btn-neutral float-right" title="How to use" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="installing.html" class="btn btn-neutral" title="Installing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="installing.html" class="btn btn-neutral" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -207,13 +272,14 @@
             VERSION:'0.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

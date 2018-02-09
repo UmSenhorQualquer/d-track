@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -34,7 +36,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="d-track 0.0 documentation" href="../index.html"/>
-        <link rel="prev" title="Running" href="../getting-started/running.html"/> 
+        <link rel="prev" title="Run D-Track" href="../getting-started/running.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -43,6 +45,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -83,11 +86,14 @@
           
             
             
-                <p class="caption"><span class="caption-text">Getting started</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started/installing.html">Installing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting-started/running.html">Running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/installing.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/running.html">Run D-Track</a></li>
 </ul>
 <p class="caption"><span class="caption-text">User manual</span></p>
 <ul class="current">
@@ -112,8 +118,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">d-track</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">d-track</a>
+        
       </nav>
 
 
@@ -122,23 +130,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
-    <li>How to use</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>How to use</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
+            
             <a href="../_sources/user-manual/how-to-use.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -155,10 +180,11 @@
 <li>Record 2 sychronized videos of a dolphin swimming on a pool.</li>
 <li>Create an OBJ file representing the real world scenario with the <a class="reference external" href="https://bitbucket.org/UmSenhorQualquer/py3dsceneeditor">py3dscene-editor</a>  application.</li>
 <li>Execute the application d-tracker-singlecam for each of the cameras to extract the dolphin centroid.</li>
-<li>Use the <a class="reference external" href="https://github.com/UmSenhorQualquer/pythonVideoAnnotator/">pythonvideoannotator application (v1.5)</a> to correct any error on the tracking.</li>
+<li>Use the <a class="reference external" href="https://github.com/UmSenhorQualquer/pythonVideoAnnotator/">pythonvideoannotator application</a> to correct any error in the tracking.</li>
 <li>Execute the application d-tracker-smoothpath to combine the cameras information and reconstruct the 3D path of the Dolphin.</li>
 </ol>
 <hr class="docutils" />
+<p>d-track-singlecam  terminal_mode –exec execute</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -187,8 +213,8 @@
 <tr class="row-odd"><td>Video</td>
 <td>Video file captured with a camera.</td>
 </tr>
-<tr class="row-even"><td>Start frame</td>
-<td>First frame of the video to analyse.</td>
+<tr class="row-even"><td>Frames range</td>
+<td>Used to select range of the frames to analyse.</td>
 </tr>
 <tr class="row-odd"><td>Camera</td>
 <td>Name given to the camera on the py3dscene-editor application.</td>
@@ -203,16 +229,16 @@
 <td>Parameter of the cv2.adaptiveThreshold for the blue component of each frame.</td>
 </tr>
 <tr class="row-odd"><td>Thresh block size</td>
-<td>...</td>
+<td>…</td>
 </tr>
 <tr class="row-even"><td>Thresh C value</td>
-<td>...</td>
+<td>…</td>
 </tr>
 <tr class="row-odd"><td>Thresh block size</td>
-<td>...</td>
+<td>…</td>
 </tr>
 <tr class="row-even"><td>Thresh C value</td>
-<td>...</td>
+<td>…</td>
 </tr>
 </tbody>
 </table>
@@ -263,13 +289,16 @@
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../getting-started/running.html" class="btn btn-neutral" title="Running" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../getting-started/running.html" class="btn btn-neutral" title="Run D-Track" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -303,13 +332,14 @@
             VERSION:'0.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

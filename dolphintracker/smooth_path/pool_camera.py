@@ -5,7 +5,7 @@ from dolphintracker.smooth_path import smooth_filters
 from dolphintracker.smooth_path.time_moment import TimeMoment
 from scipy.interpolate import interp1d
 from scipy.interpolate import InterpolatedUnivariateSpline
-from PyQt4 import QtGui
+from AnyQt.QtWidgets import QApplication
 
 from scipy.ndimage.filters import gaussian_filter
 
@@ -73,7 +73,7 @@ class PoolCamera(object):
 			spamreader = csv.reader(csvfile, delimiter=';', quotechar='|')
 			lastframe = None
 			for row in spamreader:
-				QtGui.QApplication.processEvents()
+				QApplication.processEvents()
 				if len(row)==0: continue
 				moment = TimeMoment(row)
 
@@ -162,7 +162,7 @@ class PoolCamera(object):
 
 		positions = []
 		for i, moment in enumerate( self.moments ):
-			QtGui.QApplication.processEvents()
+			QApplication.processEvents()
 			#in case there is a tracking value
 			if moment!=None:
 				positions.append([moment.frame, moment.fitBlob().position])
@@ -192,11 +192,11 @@ class PoolCamera(object):
 		"""
 
 		#Fill in the positions at the beginning of the list
-		for i in range(len(self.moments)/2, -1, -1):
+		for i in range(int(len(self.moments)/2), -1, -1):
 			if self.moments[i]==None: self.setPosition(i, self.fitBlob(i+1).position )
 
 		#Fill in the positions at the end of the list
-		for i in range(len(self.moments)/2, len(self.moments), 1):
+		for i in range(int(len(self.moments)/2), len(self.moments), 1):
 			if self.moments[i]==None:  self.setPosition(i, self.fitBlob(i-1).position )
 
 

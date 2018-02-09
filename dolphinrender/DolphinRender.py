@@ -1,24 +1,23 @@
-
-import csv, cv2, numpy as np, os
-
 import pyforms
-from pyforms import BaseWidget
-from pyforms.Controls import ControlText
-from pyforms.Controls import ControlProgress
-from pyforms.Controls import ControlSlider
-from pyforms.Controls import ControlCombo
-from pyforms.Controls import ControlButton
-from pyforms.Controls import ControlImage
-from pyforms.Controls import ControlPlayer
-from pyforms.Controls import ControlFile
-
+from pyforms 		  import BaseWidget
+from pyforms.controls import ControlText
+from pyforms.controls import ControlProgress
+from pyforms.controls import ControlSlider
+from pyforms.controls import ControlCombo
+from pyforms.controls import ControlButton
+from pyforms.controls import ControlImage
+from pyforms.controls import ControlPlayer
+from pyforms.controls import ControlFile
 from dolphinrender.render_positions import RenderPositions
 
+import cv2, os
 
 class DolphinRender(BaseWidget):
 	
 	def __init__(self):
 		super(DolphinRender,self).__init__('Dolphin render')
+
+		self.set_margin(5)
 
 		self._sceneFile 	= ControlFile('Scene file')
 
@@ -34,29 +33,19 @@ class DolphinRender(BaseWidget):
 			'_sceneFile',
 			('_video0', '_video1'),
 			('_data', '_outputfile'),
-			'_exc_btn',
-			' '
+			'_exc_btn'
 		]
 
 		self._data.changed_changed = self.__data_changed
 		self._exc_btn.value 				= self.execute
 
 
-		#self._start.value = '85300'
-		#self._start.value = '10500'
-		#self._start.value = '11500'
-		
-		self._sceneFile.value 	= '/home/ricardo/subversion/MEShTracker/Dolphin/DOLPHINS/New Videos/2012.12.01_13.48/2012.12.01_13.48_scene.obj'
-		self._video0.value 		= '/home/ricardo/subversion/MEShTracker/Dolphin/DOLPHINS/New Videos/2012.12.01_13.48/2012.12.01_13.48_Entrada (1).MP4'
-		self._video1.value 		= '/home/ricardo/subversion/MEShTracker/Dolphin/DOLPHINS/New Videos/2012.12.01_13.48/2012.12.01_13.48_Cascata (1).MP4'
-		self._data.value		= '/home/ricardo/subversion/opencsp/applications/dolphintracker/output/2012.12.01_13.48_version_13.05.2015.csv'
 		"""
-		self._sceneFile.value  	= '/home/ricardo/subversion/MEShTracker/Dolphin/DOLPHINS/New Videos/2013.03.16_12.18/2013.03.16_12.18_scene.obj'
-		self._video0.value 		= '/home/ricardo/subversion/MEShTracker/Dolphin/DOLPHINS/New Videos/2013.03.16_12.18/2013 03 16 12 18_Entrada.MP4'
-		self._video1.value 		= '/home/ricardo/subversion/MEShTracker/Dolphin/DOLPHINS/New Videos/2013.03.16_12.18/2013 03 16 12 18_Cascata.MP4'
-		self._data.value		= '/home/ricardo/subversion/opencsp/applications/dolphintracker/output/2013 03 16 12 18.csv'
+		self._sceneFile.value 	= '/home/ricardo/Downloads/golfinhos/2013.11.23_10.59_scene.obj'
+		self._video0.value 		= '/home/ricardo/Downloads/golfinhos/2013.11.23_10.59_Entrada.MP4'
+		self._video1.value 		= '/home/ricardo/Downloads/golfinhos/2013.11.23_10.59_Cascata.MP4'
+		self._data.value		= '/home/ricardo/bitbucket/3dengine-project/d-track/output/2013.11.23_10.59_scene_3d_tracking.csv'
 		"""
-
 		
 
 	def __data_changed(self):  
@@ -71,9 +60,10 @@ class DolphinRender(BaseWidget):
 		VIDEO1 		= self._video1.value
 
 		if not os.path.exists('output'): os.makedirs('output')
+
 		
 		outVideoFilename = os.path.join('output', self._outputfile.value)
-		outvideo = cv2.VideoWriter(outVideoFilename, cv2.cv.CV_FOURCC('M','J','P','G'), 30, (1920, 480))
+		outvideo = cv2.VideoWriter(outVideoFilename, cv2.VideoWriter_fourcc('M','J','P','G'), 30,  (1920, 480))
 		run = RenderPositions(SCENE_FILE, self._data.value,VIDEO0, VIDEO1, videowriter = outvideo)
 		run.startScene()
 

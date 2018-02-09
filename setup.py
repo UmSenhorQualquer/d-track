@@ -3,6 +3,7 @@
 
 from setuptools import setup, find_packages
 
+
 setup(
 	name='D-Tracker',
 	version='0.0',
@@ -14,7 +15,8 @@ setup(
 	entry_points={
 		'console_scripts':[
 			'd-track-singlecam=dolphintracker.singlecam_tracker.singlecam_tracker:main',
-			'd-track-smoothpath=dolphintracker.smooth_path.smooth_path:main'
+			'd-track-smoothpath=dolphintracker.smooth_path.smooth_path:main',
+			'd-track-render=dolphinrender.DolphinRender:main'
 		]
-	}	
+	}
 )

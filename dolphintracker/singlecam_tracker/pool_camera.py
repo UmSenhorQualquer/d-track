@@ -1,6 +1,6 @@
 import cv2, numpy as np
-from camera_filter.FindDolphin import SearchBlobs
-from camera_filter.BackGroundDetector import BackGroundDetector
+from dolphintracker.singlecam_tracker.camera_filter.FindDolphin import SearchBlobs
+from dolphintracker.singlecam_tracker.camera_filter.BackGroundDetector import BackGroundDetector
 import datetime
 
 class PoolCamera(object):

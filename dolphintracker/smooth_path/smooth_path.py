@@ -7,14 +7,16 @@ from py3dengine.cameras.Ray 		import Ray, lin3d_distance
 
 import pyforms
 from pyforms			import BaseWidget
-from pyforms.Controls	import ControlText
-from pyforms.Controls	import ControlFile
-from pyforms.Controls	import ControlButton
+from pyforms.controls	import ControlText
+from pyforms.controls	import ControlFile
+from pyforms.controls	import ControlButton
 
 class SmoothPath(BaseWidget):
 
 	def __init__(self):
 		super(SmoothPath,self).__init__('Smooth path')
+
+		self.set_margin(5)
 
 		self._scenefile			= ControlFile('Scene file')
 		self._trackfile0 		= ControlFile('Tracking from camera 0')
@@ -83,7 +85,7 @@ class SmoothPath(BaseWidget):
 		floor 			= scene.getObject('Floor')
 		floor.refraction = REFRACTION_INDEX
 
-		print "loading files"
+		print( "loading files")
 		tracking0 = PoolCamera(TRACKING_FILE0)
 		tracking1 = PoolCamera(TRACKING_FILE1)
 		############################################################
@@ -105,11 +107,11 @@ class SmoothPath(BaseWidget):
 
 		trackings = [tracking0, tracking1]
 		for i, tracking in enumerate(trackings):
-			print "start::clean paths", i
+			print( "start::clean paths", i)
 			tracking.CleanPositions();
-			print "start::interpolate paths", i
+			print( "start::interpolate paths", i)
 			tracking.InterpolatePositions()
-		print "ended"
+		print( "ended")
 		
 
 		camera_filterPos = tuple(camera_filter.position.tolist()[0])
@@ -120,7 +122,7 @@ class SmoothPath(BaseWidget):
 		last3dPos = None
 		count = 0
 
-		print "getting the 3d position"
+		print( "getting the 3d position")
 		for index, (m0, m1) in enumerate(zip(tracking0.moments, tracking1.moments)):
 			p0, p1 = m0.fitBlob().position, m1.fitBlob().position
 
@@ -128,7 +130,7 @@ class SmoothPath(BaseWidget):
 			ray0 = camera_filter.addRay( p0[0], p0[1], 30 ) if p0 else None
 			ray1 = camera1.addRay( p1[0], p1[1], 30 ) if p1 else None
 
-			if (count % 1000)==0: print count
+			if (count % 1000)==0: print( count)
 			if (count==6000) and not DEBUG: break
 			count+=1
 			
@@ -200,7 +202,7 @@ class SmoothPath(BaseWidget):
 				camera_filter.cleanRays()
 				camera1.cleanRays()
 
-				if (i % 1000)==0: print i
+				if (i % 1000)==0: print( i)
 				
 				frame  = m0.frame
 				pixel0 = m0.fitBlob().position

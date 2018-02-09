@@ -1,12 +1,12 @@
 import numpy as np, cv2
-from OTPFindBlobs import OTPFindBlobs
-from OTPSelectBiggerBlobs import OTPSelectBiggerBlobs
-from OTPAdaptativeThreshold import OTPAdaptativeThreshold
-from OTPMaskFromGeometry import OTPMaskFromGeometry
-from OTPBlobImage import OTPBlobImage
+from dolphintracker.singlecam_tracker.camera_filter.OTPFindBlobs import OTPFindBlobs
+from dolphintracker.singlecam_tracker.camera_filter.OTPSelectBiggerBlobs import OTPSelectBiggerBlobs
+from dolphintracker.singlecam_tracker.camera_filter.OTPAdaptativeThreshold import OTPAdaptativeThreshold
+from dolphintracker.singlecam_tracker.camera_filter.OTPMaskFromGeometry import OTPMaskFromGeometry
+from dolphintracker.singlecam_tracker.camera_filter.OTPBlobImage import OTPBlobImage
 
-from OTPRemoveBackground import OTPRemoveBackground
-from BackGroundDetector import BackGroundDetector
+from dolphintracker.singlecam_tracker.camera_filter.OTPRemoveBackground import OTPRemoveBackground
+from dolphintracker.singlecam_tracker.camera_filter.BackGroundDetector import BackGroundDetector
 
 
 class FilterAllPool( OTPAdaptativeThreshold):

@@ -1,5 +1,5 @@
-from OTPBase import *
-from Blob import Blob
+from dolphintracker.singlecam_tracker.camera_filter.OTPBase import *
+from dolphintracker.singlecam_tracker.camera_filter.Blob import Blob
 import cv2
 
 class OTPFindBlobs(OTPBase):

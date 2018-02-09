@@ -2,7 +2,7 @@ import cv2, time, itertools
 from numpy import *
 from math import *
 
-from OTPBase import *
+from dolphintracker.singlecam_tracker.camera_filter.OTPBase import *
 
 
 class OTPRemoveBackground(OTPBase):
@@ -10,7 +10,7 @@ class OTPRemoveBackground(OTPBase):
     _param_background_threshold = 0
     
     def __init__(self, **kwargs):
-    	super(OTPRemoveBackground, self).__init__(**kwargs)
+        super(OTPRemoveBackground, self).__init__(**kwargs)
         self._param_background_threshold = 0
         self._param_background = None  
 
@@ -25,5 +25,5 @@ class OTPRemoveBackground(OTPBase):
         return gray
 
     def process(self, frame):
-    	frame = super(OTPRemoveBackground, self).process(frame)
-    	return OTPRemoveBackground.compute(self,frame)
+        frame = super(OTPRemoveBackground, self).process(frame)
+        return OTPRemoveBackground.compute(self,frame)
