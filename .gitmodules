@@ -1,15 +1,15 @@
-[submodule "pyOSC-lib"]
-	path = pyOSC-lib
-	url = https://github.com/UmSenhorQualquer/pyOSC.git
-[submodule "pyforms-lib"]
-	path = pyforms-lib
-	url = https://github.com/UmSenhorQualquer/pyforms.git
-[submodule "pysettings-lib"]
-	path = pysettings-lib
-	url = https://github.com/UmSenhorQualquer/pysettings.git
-[submodule "py3dengine-lib"]
-	path = py3dengine-lib
-	url = https://github.com/UmSenhorQualquer/py3dengine.git
-[submodule "logging-bootstrap-lib"]
-	path = logging-bootstrap-lib
+[submodule "lib-logging-bootstrap"]
+	path = lib-logging-bootstrap
 	url = https://UmSenhorQualquer@bitbucket.org/fchampalimaud/logging-bootstrap.git
+[submodule "lib-py3dengine"]
+	path = lib-py3dengine
+	url = https://github.com/UmSenhorQualquer/py3dengine.git
+[submodule "lib-pyOSC"]
+	path = lib-pyOSC
+	url = https://github.com/UmSenhorQualquer/pyOSC.git
+[submodule "lib-pyforms"]
+	path = lib-pyforms
+	url = https://github.com/UmSenhorQualquer/pyforms.git
+[submodule "lib-pysettings"]
+	path = lib-pysettings
+	url = https://github.com/UmSenhorQualquer/pysettings.git
