@@ -5,11 +5,11 @@ import pip, os
 from subprocess import call
 
 SUBMODULES_FOLDERS = [
-    'logging-bootstrap-lib',
-    'pysettings-lib',
-    'pyforms-lib',
-    'pyOSC-lib',
-    'py3dengine-lib',
+    'lib-logging-bootstrap',
+    'lib-pysettings',
+    'lib-pyforms',
+    'lib-pyOSC',
+    'lib-py3dengine',
     '.'
 ]
 
