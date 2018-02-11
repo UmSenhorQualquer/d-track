@@ -14,7 +14,7 @@ Install on Ubuntu 17.10
 
 * Download and install `Anaconda <https://www.anaconda.com/download/#linux>`_ or `Miniconda <https://conda.io/miniconda.html>`_
 * Download the `environment configuration file <https://raw.githubusercontent.com/UmSenhorQualquer/d-track/master/environment-ubuntu17.yml>`_.
-* Open the terminal and excute the next command to install the python environment.
+* Open the terminal and execute the next command to install the python environment.
 
   .. code-block:: bash
 
