@@ -1,4 +1,4 @@
-name: py3dengine-environment
+name: d-track-environment
 channels:
 - conda-forge
 - defaults

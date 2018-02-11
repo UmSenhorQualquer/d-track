@@ -13,8 +13,8 @@ Install on Ubuntu 17.10
 --------------------------------
 
 * Download and install `Anaconda <https://www.anaconda.com/download/#linux>`_ or `Miniconda <https://conda.io/miniconda.html>`_
-* Download yml file containing `environment configuration <https://raw.githubusercontent.com/UmSenhorQualquer/d-track/master/environment-ubuntu17.yml>`_.
-* Open the terminal and excute the next commands to install the python environment.
+* Download the `environment configuration file <https://raw.githubusercontent.com/UmSenhorQualquer/d-track/master/environment-ubuntu17.yml>`_.
+* Open the terminal and excute the next command to install the python environment.
 
   .. code-block:: bash
 
@@ -24,7 +24,7 @@ Install on Ubuntu 17.10
 
   .. code-block:: bash
 
-     source activate py3dengine-environment
+     source activate d-track-environment
 
 * Clone the d-track repository.
 

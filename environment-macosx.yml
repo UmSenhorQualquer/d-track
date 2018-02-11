@@ -61,5 +61,4 @@ dependencies:
   - python-dateutil==2.6.1
   - sip==4.19.7
   - six==1.11.0
-prefix: /Users/manager/miniconda3/envs/d-track-environment
 
