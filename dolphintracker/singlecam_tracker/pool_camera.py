@@ -5,20 +5,25 @@ import datetime
 
 class PoolCamera(object):
 
-	def __init__(self, videofile, name, scene, maskObjectsNames, filters):
+	def __init__(self, videofile, name, scene, maskObjectsNames, filters, frames_range=None):
 		
-		self.name 	  = name
-		self.videoCap = cv2.VideoCapture(videofile)
-		self.scene 	  = scene
-		self.filters   = filters
-		self.mask 	  = self.create_mask(maskObjectsNames)
+		self.name 	      = name
+		self.videoCap     = cv2.VideoCapture(videofile)
+		self.scene 	      = scene
+		self.filters      = filters
+		self.mask 	  	  = self.create_mask(maskObjectsNames)
+		self.frames_range = frames_range
 
 		self._searchblobs = SearchBlobs()
 
 		self._backgrounds 	 = []
 		self._last_centroid = None
 
-		self._total_frames = int(self.videoCap.get(1))
+		if self.frames_range is not None:
+			self.videoCap.set(cv2.CAP_PROP_POS_FRAMES, self.frames_range[0])
+			print('set first frame', self.frames_range)
+
+		self._total_frames = self.videoCap.get(7)
 
 		self._colors = [(255,0,0),(0,255,0),(0,0,255)]
 
@@ -45,7 +50,11 @@ class PoolCamera(object):
 			for i, colorFilter in enumerate(self.filters):
 				firstFrame = self.frame_index
 				bgDetector = BackGroundDetector(capture=self.videoCap, filterFunction=colorFilter.process)
-				bg = bgDetector.detect(self._total_frames*0.04, self._total_frames*0.03, 180, )
+				
+				print('Background detection parameters', self._total_frames*0.04, self._total_frames*0.03)
+				last_frame = self.frames_range[1] if self.frames_range is not None else None
+				
+				bg = bgDetector.detect(int(self._total_frames*0.04), int(self._total_frames*0.03), 180, last_frame)
 				bg = cv2.dilate( bg, kernel=cv2.getStructuringElement( cv2.MORPH_RECT, (5,5) ), iterations=2 )
 				bg = 255-bg
 				bg[bg<255]=0

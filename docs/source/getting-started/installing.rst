@@ -9,8 +9,11 @@
 Install
 *************
 
-Install on Ubuntu 17.10
---------------------------------
+.. note:: 
+  
+   Currently only the environment configurations for Ubuntu 17 and MacOS X are available.
+
+
 
 * Download and install `Anaconda <https://www.anaconda.com/download/#linux>`_ or `Miniconda <https://conda.io/miniconda.html>`_
 * Download the `environment configuration file <https://raw.githubusercontent.com/UmSenhorQualquer/d-track/master/environment-ubuntu17.yml>`_.
@@ -18,7 +21,13 @@ Install on Ubuntu 17.10
 
   .. code-block:: bash
 
+     #environment to use on Ubuntu 17.10
      conda env create -f environment-ubuntu17.yml
+
+     #or 
+
+     #environment to use on MacOS X
+     conda env create -f environment-macosx.yml
 
 * Activate the environment.
 

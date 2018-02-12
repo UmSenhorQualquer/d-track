@@ -73,3 +73,12 @@ Call the command **help** to now which parameters you can use more.
 
 
 .. image:: /_static/batch-help.png
+
+
+Full commands examples:
+
+.. code-block:: bash
+   
+   d-track-singlecam terminal_mode --_sceneFile 04Hugo201302211037_Scenario.obj --_video 04Hugo201302211037MergedEntrada.MP4 --_camera Camera1 --_blockSize1 1001 --_cValue1 296 --_blockSize2 1001 --_cValue2 297 --_blockSize3 1001 --_cValue3 297 --_range 13500,105249 --exec execute
+
+   d-track-singlecam terminal_mode --_sceneFile 04Hugo201302211037_Scenario.obj --_video 04Hugo201302211037MergedCascata.MP4 --_camera Camera2 --_blockSize1 1001 --_cValue1 277 --_blockSize2 1001 --_cValue2 277 --_blockSize3 1001 --_cValue3 277 --_range 13500,105249 --exec execute

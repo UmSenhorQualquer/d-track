@@ -69,6 +69,8 @@ class RenderPositions(RunScene):
         self._video0.set(1, self._frames[0])
         self._video1.set(1, self._frames[0])
 
+        print('first frame', self._frames[0])
+
 
     def process(self, scene):
         if self._count>=len(self._frames): 
@@ -83,7 +85,7 @@ class RenderPositions(RunScene):
         frame  = self._frames[self._count]
         pixel0 = self._pixels0[self._count]
         pixel1 = self._pixels1[self._count]
-        point = self._points[self._count]
+        point  = self._points[self._count]
 
         ray0 = self._camera0.addRay(pixel0[0], pixel0[1], z=30, color=(0,1.0,0) )
         ray1 = self._camera1.addRay(pixel1[0], pixel1[1], z=30, color=(0,1.0,0))
@@ -102,7 +104,7 @@ class RenderPositions(RunScene):
 
 
     def drawData(self):
-        self.process(self._scene)
+        #self.process(self._scene)
 
         glBegin( GL_LINES );
         glColor3f(1.0,0.5,0.5)

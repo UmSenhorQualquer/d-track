@@ -39,6 +39,9 @@ class BackGroundDetector(object):
 
     def __process(self, frame, jump2Frame=2000, comprate2jumpFrame = 1000, threshold = 5 ):
         current_frame_index = self._capture.get( cv2.CAP_PROP_POS_FRAMES )
+
+        print('next frame', current_frame_index + comprate2jumpFrame)
+            
         self._capture.set( cv2.CAP_PROP_POS_FRAMES, current_frame_index + comprate2jumpFrame )
 
         res, next_frame = self._capture.read()
@@ -73,13 +76,16 @@ class BackGroundDetector(object):
 
 
 
-    def detect(self, jump2Frame=0, comprate2jumpFrame = 1000, threshold = 5 ):
+    def detect(self, jump2Frame=0, comprate2jumpFrame = 1000, threshold = 5, last_frame=None ):
         initial_pos = self._capture.get( cv2.CAP_PROP_POS_FRAMES )
 
         self.__initialize__()
         old_state = seterr(all ='ignore')
         res = True
         while res:
+            current_frame_index = self._capture.get( cv2.CAP_PROP_POS_FRAMES )
+            if last_frame is not None and current_frame_index>=last_frame: break
+
             res, current_frame = self._capture.read()
             if not res: break
             self.__process(current_frame, jump2Frame, comprate2jumpFrame, threshold)

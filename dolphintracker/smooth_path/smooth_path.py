@@ -21,19 +21,18 @@ class SmoothPath(BaseWidget):
 		self._scenefile			= ControlFile('Scene file')
 		self._trackfile0 		= ControlFile('Tracking from camera 0')
 		self._trackfile1 		= ControlFile('Tracking from camera 1')
-		self._videofile0		= ControlFile('Camera 0 video')
-		self._videofile1		= ControlFile('Camera 1 video')
 		self._outputfile 		= ControlText('Output zip file')
 		self._refraction_index 	= ControlText('Refraction index', '1.4')
 		self._exc_btn 		= ControlButton('Run')		
 
 		self.has_progress = True
 
-		self.formset = [ 	'_scenefile'	,
-							('_videofile0', '_trackfile0'),
-							('_videofile1', '_trackfile1'),
-							('_outputfile', '_refraction_index'),
-							'_exc_btn', ' ']
+		self.formset = [ 	
+			'_scenefile'	,
+			('_trackfile0', '_trackfile1'),
+			('_outputfile', '_refraction_index'),
+			'_exc_btn'
+		]
 
 		self._exc_btn.value = self.execute
 		self._scenefile.changed_event = self.__scenefile_changed
@@ -65,8 +64,6 @@ class SmoothPath(BaseWidget):
 
 
 		SCENE_FILE 			= self._scenefile.value
-		VIDEO0 				= self._videofile0.value
-		VIDEO1 				= self._videofile1.value
 		TRACKING_FILE0 		= self._trackfile0.value
 		TRACKING_FILE1 		= self._trackfile1.value
 		REFRACTION_INDEX 	= eval(self._refraction_index.value)

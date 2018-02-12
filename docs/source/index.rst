@@ -13,7 +13,7 @@ This software is part of a system used to calculate the 3d path of objects on a 
 
 .. raw:: html
    
-   <iframe width="700" height="270" src="https://www.youtube.com/embed/4KGe94g8F3g" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+   <iframe width="700" height="270" src="https://www.youtube.com/embed/4KGe94g8F3g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 Downloads
@@ -49,3 +49,4 @@ Source code				`github <https://github.com/UmSenhorQualquer/d-track>`_
    :caption: User manual
 
    user-manual/how-to-use
+   user-manual/example
