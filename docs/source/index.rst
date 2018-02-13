@@ -8,21 +8,61 @@
 D-Track
 =====================================
 
-D-Track is a software to track an object based on the 3d schematics of the scene.
-This software is part of a system used to calculate the 3d path of objects on a water pool.
+D-Track are a suite of software used to track in 3D an object based on the 3D schematics of a scene.
+These set of software was used to calculate and analyse the 3D path of dolphin on a pool in `Zoomarine @ Portugal <https://www.zoomarine.pt/pt/>`_.
+
+**D-Track applications**
+
+=================================   ==========================================================================================
+d-track-singlecam                   Extracts from a video captured by a single camera, 2d information used for the tracking.
+d-track-smoothpath                  Merge 2d information from both cameras to compute the 3d path.
+d-track-render                      Render the resulting 3d path in a 3d scene.
+=================================   ==========================================================================================
+
+**Other software used in the project**
+
+=====================================================================================   ==========================================================================
+`Python Video Annotator <https://pythonvideoannotator.readthedocs.io>`_                 Software used to correct values from the 2d tracking.
+`Python 3D Engine <https://python-3d-engine.readthedocs.io>`_                           Python library for 3d physics simulation.
+`Python 3D Scene Editor <https://python-3d-scene-editor.readthedocs.io>`_               Software to create 3d scenes for being used with the py3dengine library.
+`3D-tracking-analyser <https://github.com/UmSenhorQualquer/3D-tracking-analyser>`_      Software to visualize the results of the 3d tracking.
+=====================================================================================   ==========================================================================
+
 
 .. raw:: html
    
    <iframe width="700" height="270" src="https://www.youtube.com/embed/4KGe94g8F3g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+|
 
-Downloads
+Developers & collaborations
+--------------------------------------
+
+=================================   ============================================================================================================================================
+Ricardo Ribeiro                     from the `Champalimaud Scientific Software Platform <http://neuro.fchampalimaud.org/en/research/platforms/staff/Scientific%20Software/>`_
+                                       ricardo.ribeiro@research.fchampalimaud.org
+Patrícia Rachinas Lopes             from the `Costa lab @ Champalimaud Foundation <http://neuro.fchampalimaud.org/en/research/investigators/research-groups/group/Costa/>`_
+                                       wavespirit@gmail.com
+Dolphins                            `Zoomarine @ Portugal <https://www.zoomarine.pt/pt/>`_
+=================================   ============================================================================================================================================
+
+|
+
+.. image:: /_static/zoomarine-logo.png
+   :target: https://www.zoomarine.pt
+   :align: left
+
+.. image:: /_static/cf-logo.png
+   :target: https://neuro.fchampalimaud.org
+      
+
+|
+
+Code on Github
 ---------------------------------
 
-====================	================================================================================
-Repository zip		   `Zip file <https://github.com/UmSenhorQualquer/d-track/archive/master.zip>`_ 
-Source code				`github <https://github.com/UmSenhorQualquer/d-track>`_ 
-====================	================================================================================
+.. image:: /_static/github.png
+   :target: https://github.com/UmSenhorQualquer/d-track
 
 
 

@@ -3,10 +3,11 @@ Example
 **********
 
 .. note::
-    
+   
+   
    Download the files for this example `here <https://drive.google.com/open?id=0B7yHUGeblJDlNmgwd3M4ZkwtNzg>`_.
-
-   This example execute the applications in terminal mode.
+   
+   This example execute the applications in terminal mode.  
 
 
 * First use the command **d-track-singlecam** to extract from each camera the dolphin positions pixel positions.
