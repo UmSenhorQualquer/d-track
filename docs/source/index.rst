@@ -25,7 +25,7 @@ d-track-render                      Render the resulting 3d path in a 3d scene.
 `Python Video Annotator <https://pythonvideoannotator.readthedocs.io>`_                 Software used to correct values from the 2d tracking.
 `Python 3D Engine <https://python-3d-engine.readthedocs.io>`_                           Python library for 3d physics simulation.
 `Python 3D Scene Editor <https://python-3d-scene-editor.readthedocs.io>`_               Software to create 3d scenes for being used with the py3dengine library.
-`3D-tracking-analyser <https://github.com/UmSenhorQualquer/3D-tracking-analyser>`_      Software to visualize the results of the 3d tracking.
+`3D-tracking-analyser <https://github.com/UmSenhorQualquer/3D-tracking-analyser>`_      Software to visualize and analyse the results of the 3d tracking.
 =====================================================================================   ==========================================================================
 
 

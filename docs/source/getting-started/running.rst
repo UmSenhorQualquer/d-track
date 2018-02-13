@@ -19,7 +19,7 @@ Run D-Track
 Windows mode
 --------------------------------
 
-* Open the terminal na execute the next command in the terminal to activate the environment.
+* Open the terminal and execute the next command in the terminal to activate the environment.
 
   .. code-block:: bash
 
@@ -36,6 +36,12 @@ Windows mode
   .. code-block:: bash
 
      d-track-smoothpath
+
+* Execute the next command to open the Render application.
+
+  .. code-block:: bash
+
+     d-track-render
 
 
 .. image:: /_static/singlecam.png
@@ -61,6 +67,12 @@ or
 
    d-track-smoothpath terminal_mode --exec execute
 
+or
+
+.. code-block:: bash
+
+   d-track-render terminal_mode --exec execute
+
 
 More parameters
 ==========================
@@ -82,3 +94,5 @@ Full commands examples:
    d-track-singlecam terminal_mode --_sceneFile 04Hugo201302211037_Scenario.obj --_video 04Hugo201302211037MergedEntrada.MP4 --_camera Camera1 --_blockSize1 1001 --_cValue1 296 --_blockSize2 1001 --_cValue2 297 --_blockSize3 1001 --_cValue3 297 --_range 13500,105249 --exec execute
 
    d-track-singlecam terminal_mode --_sceneFile 04Hugo201302211037_Scenario.obj --_video 04Hugo201302211037MergedCascata.MP4 --_camera Camera2 --_blockSize1 1001 --_cValue1 277 --_blockSize2 1001 --_cValue2 277 --_blockSize3 1001 --_cValue3 277 --_range 13500,105249 --exec execute
+
+   d-track-render terminal_mode --_sceneFile 04Hugo201302211037_Scenario.obj --_video0 04Hugo201302211037MergedEntrada.MP4 --_video1 04Hugo201302211037MergedCascata.MP4 --_data output/04Hugo201302211037_Scenario_3d_tracking.csv --_outputfile test.avi --exec execute
