@@ -14,7 +14,7 @@ How to use
 Obtain the 3D path of the dolphin
 ----------------------------------
 
-1. Record 2 sychronized videos of a dolphin swimming on a pool.
+1. Record 2 sychronized videos of a dolphin swimming in a pool.
 2. Create an OBJ file representing the real world scenario with the `py3dscene-editor <https://bitbucket.org/UmSenhorQualquer/py3dsceneeditor>`_  application.
 3. Execute the application d-tracker-singlecam for each of the cameras to extract the dolphin centroid.
 4. Use the `pythonvideoannotator application <https://github.com/UmSenhorQualquer/pythonVideoAnnotator/>`_ to correct any error in the tracking.
@@ -35,7 +35,7 @@ d-tracker-singlecam
 ___________________________
 
 This application is used to segment the images of each camera and find the dolphin in the pool.
-Select the threshold values for each color channel. Try to paint only the dolphin with much colors you can.
+Select the threshold values for each color channel. Try to color the dolphin as visible as possible.
 
 .. image:: /_static/singlecam.png
 

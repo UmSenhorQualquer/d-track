@@ -8,14 +8,14 @@
 D-Track
 =====================================
 
-D-Track are a suite of software used to track in 3D an object based on the 3D schematics of a scene.
-These set of software was used to calculate and analyse the 3D path of dolphin on a pool in `Zoomarine @ Portugal <https://www.zoomarine.pt/pt/>`_.
+D-Track is a suite of software used to track an object in 3D based on the 3D schematics of a scene.
+These set of software was used to calculate and analyse the 3D position of a dolphin on a pool in `Zoomarine @ Portugal <https://www.zoomarine.pt/pt/>`_.
 
 **D-Track applications**
 
 =================================   ==========================================================================================
-d-track-singlecam                   Extracts from a video captured by a single camera, 2d information used for the tracking.
-d-track-smoothpath                  Merge 2d information from both cameras to compute the 3d path.
+d-track-singlecam                   Extracts 2d information, used for the tracking, from a recording captured by a single camera.
+d-track-smoothpath                  Render the resulting 3d path into a 3d scene.
 d-track-render                      Render the resulting 3d path in a 3d scene.
 =================================   ==========================================================================================
 
@@ -24,7 +24,7 @@ d-track-render                      Render the resulting 3d path in a 3d scene.
 =====================================================================================   ==========================================================================
 `Python Video Annotator <https://pythonvideoannotator.readthedocs.io>`_                 Software used to correct values from the 2d tracking.
 `Python 3D Engine <https://python-3d-engine.readthedocs.io>`_                           Python library for 3d physics simulation.
-`Python 3D Scene Editor <https://python-3d-scene-editor.readthedocs.io>`_               Software to create 3d scenes for being used with the py3dengine library.
+`Python 3D Scene Editor <https://python-3d-scene-editor.readthedocs.io>`_               Software to create 3d scenes to be used with the py3dengine library.
 `3D-tracking-analyser <https://github.com/UmSenhorQualquer/3D-tracking-analyser>`_      Software to visualize and analyse the results of the 3d tracking.
 =====================================================================================   ==========================================================================
 
@@ -41,8 +41,8 @@ Developers & collaborations
 =================================   ============================================================================================================================================
 Ricardo Ribeiro                     from the `Champalimaud Scientific Software Platform <http://neuro.fchampalimaud.org/en/research/platforms/staff/Scientific%20Software/>`_
                                        ricardo.ribeiro@research.fchampalimaud.org
-Patrícia Rachinas Lopes             from the `Costa lab @ Champalimaud Foundation <http://neuro.fchampalimaud.org/en/research/investigators/research-groups/group/Costa/>`_
-                                       wavespirit@gmail.com
+Patrícia Rachinas Lopes             from the `Costa lab @ Champalimaud Foundation <http://neuro.fchampalimaud.org/en/research/investigators/research-groups/group/Costa/>`_, `MARE-ISPA <(http://www.mare-centre.pt/pt/user/164)>`_
+                                       plopes@ispa.pt
 Dolphins                            `Zoomarine @ Portugal <https://www.zoomarine.pt/pt/>`_
 =================================   ============================================================================================================================================
 
