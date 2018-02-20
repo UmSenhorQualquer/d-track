@@ -5,7 +5,7 @@ Example
 .. note::
    
    
-   Download the files for this example `here <https://drive.google.com/open?id=0B7yHUGeblJDlNmgwd3M4ZkwtNzg>`_.
+   Download the files for this example `here <https://drive.google.com/drive/folders/1HmDIDY9NMQm0vSWhKNxHquq3hMlIJOAT?usp=sharing>`_.
    
    This example execute the applications in terminal mode.  
 
@@ -36,7 +36,7 @@ Example
 .. image:: /_static/d-track-render-scene.png
 
 
-First 10 minutes of the rendered video.
+Example of a video rendered with the software.
 
 .. raw:: html
    
