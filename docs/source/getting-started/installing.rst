@@ -16,7 +16,7 @@ Install
 
 
 * Download and install `Anaconda <https://www.anaconda.com/download/#linux>`_ or `Miniconda <https://conda.io/miniconda.html>`_
-* Download the `environment configuration file <https://raw.githubusercontent.com/UmSenhorQualquer/d-track/master/environment-ubuntu17.yml>`_.
+* Download the environment configuration file for `Ubuntu 17 <https://raw.githubusercontent.com/UmSenhorQualquer/d-track/master/environment-ubuntu17.yml>`_ or for the `MacOSx <https://raw.githubusercontent.com/UmSenhorQualquer/d-track/master/environment-macosx.yml>`_.
 * Open the terminal and execute the next command to install the python environment.
 
   .. code-block:: bash
