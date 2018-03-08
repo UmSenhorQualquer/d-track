@@ -8,15 +8,14 @@
 D-Track
 =====================================
 
-D-Track is a suite of software used to track an object in 3D based on the 3D schematics of a scene.
-These set of software was used to calculate and analyse the 3D position of a dolphin on a pool in `Zoomarine @ Portugal <https://www.zoomarine.pt/pt/>`_.
+D-Track is a suite of software used to track an object in 3D based on the 3D schematics of a scene. These set of software was used to calculate and analyse the 3D position of a dolphin in a pool in `Zoomarine @ Portugal <https://www.zoomarine.pt/pt/>`_.
 
 **D-Track applications**
 
 =================================   ==========================================================================================
 d-track-singlecam                   Extracts 2d information, used for the tracking, from a recording captured by a single camera.
-d-track-smoothpath                  Render the resulting 3d path into a 3d scene.
-d-track-render                      Render the resulting 3d path in a 3d scene.
+d-track-smoothpath                  Combine the 2 cameras 2d information to find the 3d path.
+d-track-render                      Render the resulting 3d path into a 3d scene.
 =================================   ==========================================================================================
 
 **Other software used in the project**
@@ -41,9 +40,9 @@ Developers & collaborations
 =================================   ============================================================================================================================================
 Ricardo Ribeiro                     from the `Champalimaud Scientific Software Platform <http://neuro.fchampalimaud.org/en/research/platforms/staff/Scientific%20Software/>`_
                                        ricardo.ribeiro@research.fchampalimaud.org
-Patrícia Rachinas Lopes             from the `Costa lab @ Champalimaud Foundation <http://neuro.fchampalimaud.org/en/research/investigators/research-groups/group/Costa/>`_, `MARE-ISPA <(http://www.mare-centre.pt/pt/user/164)>`_
+Patrícia Rachinas Lopes             from the `MARE-ISPA <http://www.mare-centre.pt/en/user/164>`_
                                        plopes@ispa.pt
-Dolphins                            `Zoomarine @ Portugal <https://www.zoomarine.pt/pt/>`_
+Dolphins                            `Zoomarine @ Portugal <https://www.zoomarine.pt/en/>`_
 =================================   ============================================================================================================================================
 
 |
@@ -52,9 +51,16 @@ Dolphins                            `Zoomarine @ Portugal <https://www.zoomarine
    :target: https://www.zoomarine.pt
    :align: left
 
+.. image:: /_static/ispa-logo.png
+   :target: http://www.ispa.pt/
+   :align: left
+
+.. image:: /_static/MARE-logo.png
+   :target: http://www.mare-centre.pt/en/
+   :align: left
+
 .. image:: /_static/cf-logo.png
    :target: https://neuro.fchampalimaud.org
-      
 
 |
 
