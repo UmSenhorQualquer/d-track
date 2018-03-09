@@ -106,4 +106,5 @@ dependencies:
   - tornado==4.5.3
   - urllib3==1.22
   - watchdog==0.8.3
+  - scipy
 
