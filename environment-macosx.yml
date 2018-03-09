@@ -62,4 +62,5 @@ dependencies:
   - sip==4.19.7
   - six==1.11.0
   - simplejson
+  - pillow
 

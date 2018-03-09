@@ -15,9 +15,9 @@ Example
 
 .. code-block:: bash
    
-   d-track-singlecam terminal_mode --_sceneFile 04Hugo201302211037_Scenario.obj --_video camera1.mp4 --_camera Camera1 --_blockSize1 1001 --_cValue1 296 --_blockSize2 1001 --_cValue2 297 --_blockSize3 1001 --_cValue3 297 --_range 13500,105249 --exec execute
+   d-track-singlecam terminal_mode --_sceneFile 04Hugo201302211037_Scenario.obj --_video camera1.mp4 --_camera Camera1 --_blockSize1 1001 --_cValue1 296 --_blockSize2 1001 --_cValue2 297 --_blockSize3 1001 --_cValue3 297 --_range 0,17965 --exec execute
 
-   d-track-singlecam terminal_mode --_sceneFile 04Hugo201302211037_Scenario.obj --_video camera2.mp4 --_camera Camera2 --_blockSize1 1001 --_cValue1 277 --_blockSize2 1001 --_cValue2 277 --_blockSize3 1001 --_cValue3 277 --_range 13500,105249 --exec execute
+   d-track-singlecam terminal_mode --_sceneFile 04Hugo201302211037_Scenario.obj --_video camera2.mp4 --_camera Camera2 --_blockSize1 1001 --_cValue1 277 --_blockSize2 1001 --_cValue2 277 --_blockSize3 1001 --_cValue3 277 --_range 0,17965 --exec execute
 
 
 * Use the **d-track-smothpath** to combine both cameras pixels positions and estimate the dolphin 3d position.

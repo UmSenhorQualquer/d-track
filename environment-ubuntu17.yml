@@ -104,4 +104,5 @@ dependencies:
   - watchdog==0.8.3
   - scipy
   - simplejson
+  - pillow
 
