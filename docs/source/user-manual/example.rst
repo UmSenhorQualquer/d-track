@@ -30,7 +30,7 @@ Example
 
 .. code-block:: bash
 
-   d-track-render terminal_mode --_sceneFile 04Hugo201302211037_Scenario.obj --_video0 camera1.MP4 --_video1 camera2.MP4 --_data output/04Hugo201302211037_Scenario_3d_tracking.csv --_outputfile test.avi --exec execute
+   d-track-render terminal_mode --_sceneFile 04Hugo201302211037_Scenario.obj --_video0 camera1.mp4 --_video1 camera2.mp4 --_data output/04Hugo201302211037_Scenario_3d_tracking.csv --_outputfile test.avi --exec execute
 
 
 .. image:: /_static/d-track-render-scene.png
