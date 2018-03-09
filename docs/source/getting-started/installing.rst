@@ -27,6 +27,7 @@ Install
      #or 
 
      #command to use on MacOS X
+     conda install wget
      wget --no-check-certificate https://raw.githubusercontent.com/UmSenhorQualquer/d-track/master/environment-macosx.yml
 
 * Open the terminal and execute the next command to install the python environment.
