@@ -17,6 +17,18 @@ Install
 
 * Download and install `Anaconda <https://www.anaconda.com/download/#linux>`_ or `Miniconda <https://conda.io/miniconda.html>`_
 * Download the environment configuration file for `Ubuntu 17 <https://raw.githubusercontent.com/UmSenhorQualquer/d-track/master/environment-ubuntu17.yml>`_ or for the `MacOSx <https://raw.githubusercontent.com/UmSenhorQualquer/d-track/master/environment-macosx.yml>`_.
+
+
+  .. code-block:: bash
+
+     #command to use on Ubuntu 17.10
+     wget --no-check-certificate https://raw.githubusercontent.com/UmSenhorQualquer/d-track/master/environment-ubuntu17.yml
+
+     #or 
+
+     #command to use on MacOS X
+     wget --no-check-certificate https://raw.githubusercontent.com/UmSenhorQualquer/d-track/master/environment-macosx.yml
+
 * Open the terminal and execute the next command to install the python environment.
 
   .. code-block:: bash
@@ -39,7 +51,7 @@ Install
 
   .. code-block:: bash
 
-     git clone https://github.com/UmSenhorQualquer/d-track.git
+     git clone --recursive https://github.com/UmSenhorQualquer/d-track.git
 
 * Change the current directory to the d-track folder.
 

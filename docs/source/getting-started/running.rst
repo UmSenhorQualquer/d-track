@@ -16,14 +16,14 @@ Run D-Track
     Please make sure you have installed the environment before trying to execute the application.
 
 
-Windows mode
---------------------------------
-
 * Open the terminal and execute the next command in the terminal to activate the environment.
 
   .. code-block:: bash
 
-     source activate py3dengine-environment
+     source activate d-track-environment
+
+Windows mode
+--------------------------------
 
 * Execute the next command to open the Tracking application.
 
