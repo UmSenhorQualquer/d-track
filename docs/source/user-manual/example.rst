@@ -3,10 +3,13 @@ Example
 **********
 
 .. note::
-   
-   
-   Download the files for this example `here <https://drive.google.com/drive/folders/1HmDIDY9NMQm0vSWhKNxHquq3hMlIJOAT?usp=sharing>`_.
-   
+
+   .. image:: https://about.zenodo.org/static/img/logos/zenodo-gradient-round.svg
+      :width: 200 px
+      :align: right
+
+   Download the files for this example `here <http://doi.org/10.5281/zenodo.1253284>`_.
+
    This example execute the applications in terminal mode.  
 
 

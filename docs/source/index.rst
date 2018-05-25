@@ -1,4 +1,4 @@
-.. d-tracker documentation master file, created by
+.. d-track documentation master file, created by
    sphinx-quickstart on Mon Jan 30 09:40:02 2017.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.

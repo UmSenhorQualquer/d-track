@@ -10,7 +10,7 @@ setup(
 	author='Ricardo Ribeiro',
 	author_email='ricardojvr@gmail.com',
 	license='MIT',
-	url='https://bitbucket.org/fchampalimaud/d-tracker',
+	url='https://github.com/UmSenhorQualquer/d-track',
 	packages=find_packages(),
 	entry_points={
 		'console_scripts':[
